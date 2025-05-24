@@ -14,8 +14,33 @@
         width: 100%;    /* Make the image responsive by scaling to 100% of its container */
         height: auto;   /* Preserve the image's aspect ratio automatically */
     }
+
+    .top-left {
+        /* Define styles for the clickable image positioned at the top left */
+        position: absolute; /* Position it relative to the viewport */
+        top: 0; /* Align to the top edge */
+        left: 0;    /* Align to the left edge */
+        margin: 10px;   /* Add spacing from the top and left edges */
+    }
+
+    .top-left img {
+        /* Define styles for the image inside the top-left clickable element */
+        max-width: 60px;   /* Limit the image width to 100px */
+        width: 100%;    /* Make the image responsive by scaling to 100% of its container */
+        height: auto;   /* Preserve the image's aspect ratio automatically */
+        cursor: pointer;    /* Change the cursor on hover to indicate clickability */
+    }
 </style>
 
+
+<a 
+    class="top-left"    
+    href="https://www.linkedin.com/in/dianellasy/"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    <img src="linkedin_icon.jpg" alt="Linkedin Icon" />
+</a>
 
 <header class = "header">   <!-- Create a header element with the class "header" for centering the image -->
     <img src="home_page_name_banner.png" alt="Logo" />   <!-- Insert the home_page_name_banner image from the static folder with alternative text -->
