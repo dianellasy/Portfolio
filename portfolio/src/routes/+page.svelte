@@ -5,12 +5,11 @@
         position: absolute; /* Position it relative to the viewport */
         top: 0; /* Align to the top edge */
         left: 0;    /* Align to the left edge */
-        margin: 10px;   /* Add spacing from the top and left edges */
     }
 
-    .top-left-flicker {
+    .top-left img {
         /* Define styles for the flicker GIF inside the top-left container */
-        max-width: 150px;   /* Limit the image width to 150px */
+        max-width: 1000px;   /* Limit the image width to 1000px */
         width: 100%;    /* Make the image responsive by scaling to 100% of its container */
         height: auto;   /* Preserve the image's aspect ratio automatically */
     }
@@ -41,11 +40,25 @@
         height: auto;   /* Preserve the image's aspect ratio automatically */
         cursor: pointer;    /* Change the cursor on hover to indicate clickability */
     }
+
+    .bottom-right {
+        /* Position its content at the bottom right of the viewport */
+        position: absolute; /* Position it relative to the viewport */
+        bottom: 0;  /* Align to the bottom edge */
+        right: 0;   /* Align to the right edge */
+    }
+
+    .bottom-right img {
+        /* Define styles for the flicker GIF inside the bottom-right container */
+        max-width: 1000px;   /* Limit the image width to 1000px */
+        width: 100%;    /* Make the image responsive by scaling to 100% of its container */
+        height: auto;   /* Preserve the image's aspect ratio automatically */
+    }
 </style>
 
 
 <div class="top-left">
-    <!-- Container for the GIF is positioned using the .top-left class -->
+    <!-- Container for the GIF, positioned using the .top-left class -->
      <img src="/home/top_left_flicker.gif" alt="Top Left Flicker GIF" />
 </div>
 
@@ -67,4 +80,9 @@
     >
         <img class="github-icon" src="/home/github_icon.png" alt="GitHub Icon" />
     </a>
+</div>
+
+<div class="bottom-right">
+    <!-- Container for the GIF, positioned using the .bottom-right class -->
+     <img src="/home/bottom_right_flicker.gif" alt="Bottom Right Flicker GIF" />
 </div>
