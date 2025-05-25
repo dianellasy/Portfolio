@@ -9,7 +9,7 @@
 
     .top-left img {
         /* Define styles for the flicker GIF inside the top-left container */
-        max-width: 1000px;   /* Limit the image width to 1000px */
+        max-width: 466px;   /* Limit the image width to 466px */
         width: 100%;    /* Make the image responsive by scaling to 100% of its container */
         height: auto;   /* Preserve the image's aspect ratio automatically */
     }
@@ -41,6 +41,22 @@
         cursor: pointer;    /* Change the cursor on hover to indicate clickability */
     }
 
+    .middle-container {
+        /* Define a container that will fill the entire viewport and center its content */
+        display: flex;  /* Use flexbox to center content */
+        justify-content: center;    /* Center content horizontally */
+        align-items: center;    /* Center content vertically */
+        height: 100vh;  /* Make the container fill the entire viewport height */
+        width: 100%;    /* Ensure the container spans the full width */
+    }
+
+    .middle-container img {
+        /* Define styles for the name banner GIF inside the middle container */
+        max-width: 1000px;   /* Limit the image width to 1000px */
+        width: 100%;    /* Make the image responsive by scaling to 100% of its container */
+        height: auto;   /* Preserve the image's aspect ratio automatically */
+    }
+
     .bottom-right {
         /* Position its content at the bottom right of the viewport */
         position: absolute; /* Position it relative to the viewport */
@@ -50,7 +66,7 @@
 
     .bottom-right img {
         /* Define styles for the flicker GIF inside the bottom-right container */
-        max-width: 1000px;   /* Limit the image width to 1000px */
+        max-width: 533px;   /* Limit the image width to 533px */
         width: 100%;    /* Make the image responsive by scaling to 100% of its container */
         height: auto;   /* Preserve the image's aspect ratio automatically */
     }
@@ -81,6 +97,13 @@
         <img class="github-icon" src="/home/github_icon.png" alt="GitHub Icon" />
     </a>
 </div>
+
+
+<div class="middle-container">
+    <!-- Container for the GIF, positioned using the .middle-container class -->
+     <img src="/home/name_banner.gif" alt="Name Banner GIF" />
+</div>
+
 
 <div class="bottom-right">
     <!-- Container for the GIF, positioned using the .bottom-right class -->
