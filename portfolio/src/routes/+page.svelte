@@ -44,17 +44,43 @@
     .middle-container {
         /* Define a container that will fill the entire viewport and center its content */
         display: flex;  /* Use flexbox to center content */
+        flex-direction: column; /* Stack children vertically, so the name banner GIF is on top and the three buttons are below */
         justify-content: center;    /* Center content horizontally */
         align-items: center;    /* Center content vertically */
         height: 100vh;  /* Make the container fill the entire viewport height */
         width: 100%;    /* Ensure the container spans the full width */
     }
 
-    .middle-container img {
-        /* Define styles for the name banner GIF inside the middle container */
+    .middle-container video {
+        /* Define styles for the name banner video element inside the middle container */
         max-width: 1000px;   /* Limit the image width to 1000px */
         width: 100%;    /* Make the image responsive by scaling to 100% of its container */
         height: auto;   /* Preserve the image's aspect ratio automatically */
+    }
+
+    .button-container {
+        /* Define a container for the three buttons placed below the image */
+        margin-top: 20px;   /* Create some space between the image and the buttons */
+        display: flex;  /* Use flexbox to line up the buttons next to each other */
+        gap: 10px;  /* Add horizontal space between each button */
+        transform: translateX(-34px);    /* Shift the entire button container 34px left */
+    }
+
+    .button-container button {
+        /* Define styles for each button */
+        padding: 10px 20px; /* Give the button some padding */
+        font-size: 16px;    /* Set 16px as the text size for the buttons */
+        border: none;   /* Remove the default button border */
+        border-radius: 5px; /* Add rounded corners */
+        background-color: pink; /* Set a pink background color */
+        color: black;   /* Set black as the text color */
+        cursor: pointer;    /* Change the mouse cursor when hovering over the button */
+        transition: background-color 0.3s ease;  /* Smooth transition for hover effects */
+    }
+
+    .button-container button:hover {
+        /* Hover effect to darken the background of the button */
+        background-color: hotpink;  /* Hot Pink on hover */
     }
 
     .bottom-right {
@@ -100,8 +126,19 @@
 
 
 <div class="middle-container">
-    <!-- Container for the GIF, positioned using the .middle-container class -->
-     <img src="/home/name_banner.gif" alt="Name Banner GIF" />
+     <!-- Container for the name banner video, positioned using the .middle-container class -->
+     <video autoplay loop muted playsinline>
+            <!-- Video element configured to autoplay, loop, be muted and play inline -->
+            <source src="/home/name_banner.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+         </video>
+
+     <div class="button-container">
+        <!-- Container for the three buttons placed underneath the image -->     
+         <button>𐙚 About Me</button>
+         <button>𐙚 Projects</button>
+         <button>𐙚 Photo Gallery</button>
+     </div>
 </div>
 
 
