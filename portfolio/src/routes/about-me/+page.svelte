@@ -45,21 +45,33 @@
         color: white; /* White text */
     }
 
-    .linkedin-icon {
-        /* Define style for the LinkedIn icon underneath the text */
-        display: inline-block;
-        cursor: pointer;
-        margin-top: 10px;   /* Adds some spacing between the text and the LinkedIn icon */
+    .social-icons {
+        display: inline-flex;  /* Inline flex so it does not take the full width */
+        gap: 20px;  /* Space between the icons */
+        margin-top: 10px;   /* Space between the text and the icons */
     }
 
-    .linkedin-icon svg {
+    .linkedin-icon,
+    .github-icon {
+        /* Common styling for both icon links */
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .linkedin-icon svg,
+    .github-icon svg {
+        /* Common SVG styling for icons */
         width: 33px;
         height: 40px;
         fill: white;    /* Default fill is white for clarity on a black background */
         transition: fill 0.3s ease;
     }
 
-    .linkedin-icon:hover svg {
+    .linkedin-icon:hover svg path {
+        fill: #efb7ce;  /* Icon turns pink when hovered */
+    }
+
+    .github-icon:hover svg path {
         fill: #efb7ce;  /* Icon turns pink when hovered */
     }
 
@@ -136,25 +148,48 @@
         <p>
             Aspiring Software Developer
         </p>
-
-        <!-- LinkedIn icon underneath the white text -->
-        <a
-            class="linkedin-icon"
-            href="https://www.linkedin.com/in/dianellasy"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <svg
-                role="img"
-                viewBox="0 0 448 512"
-                xmlns="http://www.w3.org/2000/svg"
+        
+        <div class="social-icons">
+            <!-- LinkedIn icon underneath the white text -->
+            <a
+                class="linkedin-icon"
+                href="https://www.linkedin.com/in/dianellasy"
+                target="_blank"
+                rel="noopener noreferrer"
             >
-            <title>LinkedIn</title>
-            <path d="M100.28 448H7.4V148.9h92.88zm-46.44-295.2a53.79 53.79 0 1 1
-               53.79-53.79 53.79 53.79 0 0 1-53.79 53.79zm394.56 295.2h-92.68V302.4c0-34.7-12.43-58.4-43.55-58.4-23.74
-               0-37.87 16.02-44.12 31.49-2.27 5.59-2.82 13.41-2.82 21.28V448H171.09v-260h92.68v36.88c12.33-19
-               34.38-46.16 83.55-46.16 61 0 106.67 39.92 106.67 125.59v153.69z"/>
-            </svg>
-        </a>
+                <svg
+                    role="img"
+                    viewBox="0 0 448 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <title>LinkedIn</title>
+                    <path d="M100.28 448H7.4V148.9h92.88zm-46.44-295.2a53.79 53.79 0 1 1
+                        53.79-53.79 53.79 53.79 0 0 1-53.79 53.79zm394.56 295.2h-92.68V302.4c0-34.7-12.43-58.4-43.55-58.4-23.74
+                        0-37.87 16.02-44.12 31.49-2.27 5.59-2.82 13.41-2.82 21.28V448H171.09v-260h92.68v36.88c12.33-19
+                        34.38-46.16 83.55-46.16 61 0 106.67 39.92 106.67 125.59v153.69z"/>
+                </svg>
+            </a>
+
+            <!-- GitHub icon underneath the white text-->
+            <a
+                class="github-icon"
+                href="https://github.com/dianellasy"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <title>GitHub</title>
+                    <!-- Typical GitHub SVG path icon -->
+                    <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.3c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7
+                        1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.4.1-2.9
+                        0 0 1-.3 3.2 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.2-1.6 3.2-1.2 3.2-1.2.6 1.5.2 2.6.1 2.9.8.9 1.2 2 1.2 3.3 0 4.5-2.7 5.5-5.3 5.8.4.3.8 1 .8 2v3c0 .3.2.8.8.6
+                        4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/>
+                </svg>
+            </a>
+        </div>
     </div>
 </div>
