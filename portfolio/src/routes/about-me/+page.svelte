@@ -45,6 +45,24 @@
         color: white; /* White text */
     }
 
+    .linkedin-icon {
+        /* Define style for the LinkedIn icon underneath the text */
+        display: inline-block;
+        cursor: pointer;
+        margin-top: 10px;   /* Adds some spacing between the text and the LinkedIn icon */
+    }
+
+    .linkedin-icon svg {
+        width: 33px;
+        height: 40px;
+        fill: white;    /* Default fill is white for clarity on a black background */
+        transition: fill 0.3s ease;
+    }
+
+    .linkedin-icon:hover svg {
+        fill: #efb7ce;  /* Icon turns pink when hovered */
+    }
+
     .content {
         /* Content container on the right side of the image */
         flex: 1;    /* Takes up the remaining space */
@@ -118,5 +136,25 @@
         <p>
             Aspiring Software Developer
         </p>
+
+        <!-- LinkedIn icon underneath the white text -->
+        <a
+            class="linkedin-icon"
+            href="https://www.linkedin.com/in/dianellasy"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <svg
+                role="img"
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+            <title>LinkedIn</title>
+            <path d="M100.28 448H7.4V148.9h92.88zm-46.44-295.2a53.79 53.79 0 1 1
+               53.79-53.79 53.79 53.79 0 0 1-53.79 53.79zm394.56 295.2h-92.68V302.4c0-34.7-12.43-58.4-43.55-58.4-23.74
+               0-37.87 16.02-44.12 31.49-2.27 5.59-2.82 13.41-2.82 21.28V448H171.09v-260h92.68v36.88c12.33-19
+               34.38-46.16 83.55-46.16 61 0 106.67 39.92 106.67 125.59v153.69z"/>
+            </svg>
+        </a>
     </div>
 </div>
