@@ -46,20 +46,21 @@
     }
 
     .social-icons {
+        /* Container for all social icons */
         display: inline-flex;  /* Inline flex so it does not take the full width */
+        align-items: center;
         gap: 20px;  /* Space between the icons */
         margin-top: 10px;   /* Space between the text and the icons */
     }
 
-    .linkedin-icon,
-    .github-icon {
-        /* Common styling for both icon links */
+    .social-icons a {
+        /* Common styling for icon links */
         display: inline-block;
         cursor: pointer;
+        text-decoration: none;
     }
 
-    .linkedin-icon svg,
-    .github-icon svg {
+    .social-icons svg {
         /* Common SVG styling for icons */
         width: 33px;
         height: 40px;
@@ -72,6 +73,10 @@
     }
 
     .github-icon:hover svg path {
+        fill: #efb7ce;  /* Icon turns pink when hovered */
+    }
+
+    .email-icon:hover svg path {
         fill: #efb7ce;  /* Icon turns pink when hovered */
     }
 
@@ -188,6 +193,22 @@
                         1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.4.1-2.9
                         0 0 1-.3 3.2 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.2-1.6 3.2-1.2 3.2-1.2.6 1.5.2 2.6.1 2.9.8.9 1.2 2 1.2 3.3 0 4.5-2.7 5.5-5.3 5.8.4.3.8 1 .8 2v3c0 .3.2.8.8.6
                         4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/>
+                </svg>
+            </a>
+
+            <!-- Email icon underneath the white text -->
+            <a
+                class="email-icon"
+                href="mailto:dianellabsy@csu.fullerton.edu"
+            >
+                <svg
+                    role="img"
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <title>Email</title>
+                    <!--Envelope icon path -->
+                    <path d="M502.3 190.8L327.4 338.4c-24.5 19.2-59.1 19.2-83.6 0L9.7 190.8C3.6 186.3 0 179.3 0 171.9V92c0-14.8 12-27 27-27h458c15 0 27 12.2 27 27v79c0 7.4-3.6 14.4-9.7 18.9zM480 224L480 424c0 15-12 27-27 27h-458c-15 0-27-12-27-27L0 224l184.1 144.1c36.6 28.8 90.6 28.8 127.2 0L480 224z"/>
                 </svg>
             </a>
         </div>
