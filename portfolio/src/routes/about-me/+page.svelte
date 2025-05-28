@@ -20,15 +20,15 @@
     .left-side-image {
         /* Image that will appear on the left side */
         width: 380px;   /* Set a fixed width of 380px */
-        margin-left: 250px;  /* Shifts the image a little to the right */
+        margin-left: 240px;  /* Shifts the image a little to the right */
         margin-top: 50px;  /* Moves the image up a bit */
-        margin-right: 200px; /* Space between the image and the text */
+        margin-right: 190px; /* Space between the image and the text */
     }
 
     .bottom-text-underneath-picture-in-pink {
         /* Text block with pink color */
         margin-top: 30px;   /* Provides breathing room above the buttom text */
-        margin-left: -940px;  /* Moves the entire bottom-text container -940px to the right */
+        margin-left: -950px;  /* Moves the entire bottom-text container -940px to the right */
         font-family: 'Open Sans', sans-serif;
         font-size: 30px;    /* Set the font size to 30 pixels */
         text-align: center; /* Center aligns the text within this container */
@@ -38,7 +38,7 @@
     .bottom-text-underneath-picture-in-white {
         /* Text block with white color */
         margin-top: -20px;   /* Provides breathing room above the buttom text */
-        margin-left: -940px;  /* Moves the entire bottom-text container -940px to the right */
+        margin-left: -950px;  /* Moves the entire bottom-text container -940px to the right */
         font-family: 'Open Sans', sans-serif;
         font-size: 20px;    /* Set the font size to 20 pixels */
         text-align: center; /* Center aligns the text within this container */
