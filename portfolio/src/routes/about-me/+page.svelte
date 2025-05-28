@@ -80,6 +80,10 @@
         fill: #efb7ce;  /* Icon turns pink when hovered */
     }
 
+    .resume-icon:hover svg path {
+        fill: #efb7ce;
+    }
+
     .content {
         /* Content container on the right side of the image */
         flex: 1;    /* Takes up the remaining space */
@@ -209,6 +213,27 @@
                     <title>Email</title>
                     <!--Envelope icon path -->
                     <path d="M502.3 190.8L327.4 338.4c-24.5 19.2-59.1 19.2-83.6 0L9.7 190.8C3.6 186.3 0 179.3 0 171.9V92c0-14.8 12-27 27-27h458c15 0 27 12.2 27 27v79c0 7.4-3.6 14.4-9.7 18.9zM480 224L480 424c0 15-12 27-27 27h-458c-15 0-27-12-27-27L0 224l184.1 144.1c36.6 28.8 90.6 28.8 127.2 0L480 224z"/>
+                </svg>
+            </a>
+
+            <a
+                class="resume-icon"
+                href="/about-me/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg
+                    role="img"
+                    viewBox="0 0 384 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <title>Resume</title>
+                    <!-- This is a file/document icon (similar to Font Awesome's file-alt icon) -->
+                    <path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 
+                        0 24-10.7 24-24V160H248c-13.3 0-24-10.7-24-24zm121.9 138.1l-55.5 
+                        55.5c-4.7 4.7-12.3 4.7-17 0L215 249.5c-4.7-4.7-4.7-12.3 
+                        0-17l55.5-55.5c4.7-4.7 12.3-4.7 17 0l57.4 57.4c4.8 4.7 4.8 12.3 
+                        .1 17zM256 0v128h128L256 0z"/>
                 </svg>
             </a>
         </div>
