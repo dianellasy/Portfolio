@@ -12,7 +12,9 @@
 
 ♡ Obtained tokens if the order is successfully served, and the user wins if a certain number of tokens is reached`,
             icons: [
-                { iconClass: "fab fa-github", link: "https://github.com/emilyytsai/CountryLifeCafe" }
+                { type: "font", iconClass: "fab fa-github", link: "https://github.com/emilyytsai/CountryLifeCafe" },
+                { type: "font", iconClass: "fab fa-slideshare", link: "https://www.canva.com/design/DAGmOZJheP0/E6IFtfqVpwVTka625psaVQ/view?utm_content=DAGmOZJheP0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5f121b982c#1" },
+                { type: "font", iconClass: "fab fa-youtube", link: "https://youtu.be/Vb7xCwOkYAs?si=vch39ADE-2U_ct7m" }
             ]
         },
 
@@ -25,7 +27,9 @@
 
 ♡ Served the animals ice cream, and if they are satisfied, they will go home with the cafe owner back to Earth`,
             icons: [
-                { iconClass: "fab fa-github", link: "https://github.com/emilyytsai/OutOfThisWorldCafe" }
+                { type: "font", iconClass: "fab fa-github", link: "https://github.com/emilyytsai/OutOfThisWorldCafe" },
+                { type: "font", iconClass: "fab fa-youtube", link: "https://youtu.be/ShiuO1t1tdo?si=QX4cMG3phMMwj-W_" },
+                { type: "image", src: "/projects/devpost.png", link: "https://devpost.com/software/out-of-this-world-cafe?_gl=1*vopaxd*_gcl_au*NjQ1NTc5NTYzLjE3NDEzMDkyODk.*_ga*NDgxOTI4NjA2LjE3NDEzMDkyODk.*_ga_0YHJK3Y10M*czE3NDg0OTMxMjQkbzIzJGcxJHQxNzQ4NDkzMTI3JGo1NyRsMCRoMA.." }
             ]
         },
 
@@ -36,7 +40,7 @@
 
 ♡ Redesign a page that showcases portfolios utilizing Figma, JSON, and Svelte`,
             icons: [
-                { iconClass: "fab fa-github", link: "https://github.com/EthanThatOneKid/acmcsuf.com/pull/1178" }
+                { type: "font", iconClass: "fab fa-github", link: "https://github.com/EthanThatOneKid/acmcsuf.com/pull/1178" }
             ]
         },
 
@@ -234,7 +238,11 @@
                 <div class="project-icons">
                     {#each project.icons as icon}   <!-- Loop through each icon in the project's icons array -->
                         <a href={icon.link} target="_blank" rel="noopener noreferrer">  <!-- Each icon is wrapped in a link that opens in a new tab -->
-                            <i class={icon.iconClass}></i>  <!-- Render the icon using the iconClass-->
+                            {#if icon.type === 'image'}
+                                <img src={icon.src} alt="Devpost Icon" style="width: 1.5rem; height: 1.5rem;" />
+                            {:else}
+                                <i class={icon.iconClass}></i>  <!-- Render the icon using the iconClass-->
+                            {/if}
                         </a>
                     {/each}
                 </div>
