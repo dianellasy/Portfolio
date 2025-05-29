@@ -40,7 +40,8 @@
 
 ♡ Redesign a page that showcases portfolios utilizing Figma, JSON, and Svelte`,
             icons: [
-                { type: "font", iconClass: "fab fa-github", link: "https://github.com/EthanThatOneKid/acmcsuf.com/pull/1178" }
+                { type: "font", iconClass: "fab fa-github", link: "https://github.com/EthanThatOneKid/acmcsuf.com/pull/1178" },
+                { type: "font", iconClass: "fas fa-globe", link: "https://acmcsuf.com/portfolios" }
             ]
         },
 
