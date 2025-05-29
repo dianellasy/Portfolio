@@ -1,3 +1,4 @@
+
 <script>
     import { text } from "@sveltejs/kit";
 
@@ -6,11 +7,12 @@
         {
             name: "Country Life Cafe",
             image: "/projects/country_life_cafe.png",
-            text: `♡ Programmed a video game using Unity and C# to promote the idea of sustainable farming
+            text: `♡ Programmed a video game using C# and Unity to promote the idea of sustainable farming
 
 ♡ Produced ingredients on the farm and built the order in the half kitchen and half window scene in a specific amount of time for three days
 
 ♡ Obtained tokens if the order is successfully served, and the user wins if a certain number of tokens is reached`,
+            technologies: ["C#", "Unity"],
             icons: [
                 { type: "font", iconClass: "fab fa-github", link: "https://github.com/emilyytsai/CountryLifeCafe" },
                 { type: "font", iconClass: "fab fa-slideshare", link: "https://www.canva.com/design/DAGmOZJheP0/E6IFtfqVpwVTka625psaVQ/view?utm_content=DAGmOZJheP0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5f121b982c#1" },
@@ -26,6 +28,7 @@
 ♡ Implemented a restaurant tycoon video game utilizing C# and Unity, where a group of animals have been stranded in space for a period of time
 
 ♡ Served the animals ice cream, and if they are satisfied, they will go home with the cafe owner back to Earth`,
+            technologies: ["C#", "Unity", "24-Hour Hackathon", "Best Game Project", "250+ Participants"],
             icons: [
                 { type: "font", iconClass: "fab fa-github", link: "https://github.com/emilyytsai/OutOfThisWorldCafe" },
                 { type: "font", iconClass: "fab fa-youtube", link: "https://youtu.be/ShiuO1t1tdo?si=QX4cMG3phMMwj-W_" },
@@ -39,6 +42,7 @@
             text: `♡ Contribute to the Association for Computing Machinery CSUF’s website, the largest open-source project for the chapter club, by fixing issues listed on GitHub and creating pull requests
 
 ♡ Redesign a page that showcases portfolios utilizing Figma, JSON, and Svelte`,
+            technologies: ["Figma", "JSON", "Svelte"],
             icons: [
                 { type: "font", iconClass: "fab fa-github", link: "https://github.com/EthanThatOneKid/acmcsuf.com/pull/1178" },
                 { type: "font", iconClass: "fas fa-globe", link: "https://acmcsuf.com/portfolios" }
@@ -50,11 +54,13 @@
             text: `♡ Implemented a custom doubly linked list class and a wrapper class, an adapter, in C++ that enables user code to interact directly with a simulation of a bookstore
 
 ♡ Maintained a list of books, sells books to a customer, and allows the user to add new books and view a list of all books in the inventory`,
+            technologies: ["C++", "Data Structures"],
         },
 
         {
             name: "Food Wastage Tracker",
             text: `♡ Built a final Object-Oriented Programming course project, a web-based application utilizing C++, that empowers individuals to track, manage, and minimize their food waste`,
+            technologies: ["C++", "Object-Oriented Programming"],
         },
 
         {
@@ -62,6 +68,7 @@
             text: `♡ Utilized JavaScript to implement a web-based application that prompts the user with a few questions and then devises custom recommendations for their summer activities
 
 ♡ Personalized users’ interests to present a concrete, comprehensive list of activities to do in the summer`,
+            technologies: ["JavaScript"],
         }
     ];
 </script>
@@ -183,6 +190,23 @@
         object-fit: cover;  /* Ensure the image covers the area without distortion */
     }
 
+    .technology-badges {
+        /* Technology badges container */
+        display: flex;  /* Use Flexbox for layout */
+        justify-content: center;    /* Center badgs horizontally */
+        gap: 0.5rem;    /* Space between badges */
+        margin-bottom: 1rem;    /* Space below the badges section */
+    }
+
+    .badge {
+        /* Styles for individual badges */
+        background: linear-gradient(70deg, #8B516A, #BA8E23); /* Dark grey background */
+        color: #fff;    /* White text */
+        font-size: 0.8rem;  /* Smaller font size for badges */
+        padding: 0.3rem 0.6rem; /* Padding to create the rectangle shape */
+        border-radius: 4px; /* Slightly rounded corners */
+    }
+
     .project-text {
         /* Style for the multi-line project text */
         color: #ccc;    /* Light gray color for the descriptive text */
@@ -231,6 +255,14 @@
                     src={project.image}
                     alt="{project.name}"
                 />
+            {/if}
+
+            {#if project.technologies}  <!-- Check if project.technologies exists -->
+                <div class="technology-badges">
+                    {#each project.technologies as tech}    <!-- Loop over each technology -->
+                        <span class="badge">{tech}</span>   <!-- Render as a badge -->
+                    {/each}
+                </div>
             {/if}
 
             <div class="project-text">{project.text}</div>  <!-- Display the project text with multi-line support -->
