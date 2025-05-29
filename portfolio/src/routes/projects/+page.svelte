@@ -64,14 +64,15 @@
         /* Style for the projects title at the top */
         font-size: 2.5rem;  /* Font size */
         font-weight: bold;  /* Bold font for impact */
-        margin: 1.5rem auto;   /* Automatic horizontal margins center the element */
-        background: linear-gradient(1550deg, yellow, hotpink);    /* Gradient background from hotpink to yellow */
-        background-clip: text; /* Clip the background to the text (standard) */
+        text-align: center; /* Center the title */
+        margin: 1.5rem 0;   /* Vertical margins for spacing */
+        background: linear-gradient(45deg, hotpink, yellow);    /* Gradient background from hotpink to yellow */
         -webkit-background-clip: text;  /* Clip the background to the text for WebKit browsers */
-        color: transparent; /* Transparent text color so that the gradient shows */
         -webkit-text-fill-color: transparent;   /* Make text fill transparent to reveal the gradient */
-        display: inline-block;  /* Helps ensure proper clipping in some browsers */
+        background-clip: text;  /* Standard text clipping */
+        color: transparent; /* Transparent text color so that the gradient shows */
     }
+
     .container {
         /* Container defines a grid layout for the project cards with three equal columns */
         display: grid;  /* Apply CSS Grid layout */
@@ -90,6 +91,13 @@
         overflow: hidden;   /* Hide any overflowing content */
         padding: 1rem;  /* Internal spacing inside the card */
         z-index: 1; /* Ensure the card content sits above the neon border */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Smooth transition on hover */
+    }
+
+    .card:hover {
+        /* Hover effect for the card to raise it with a slight scale and shadow */
+        transform: translateY(-10px) scale(1.02);   /* Moves the card up (-10px) and scales it up slightly */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Adds a shadow to enhance the 3D lifted effect */
     }
 
     .card::before {
