@@ -55,6 +55,23 @@
 </script>
 
 <style>
+    .title-container {
+        /* Container for the title to center its content */
+        text-align: center; /* Centers inline or inline-block children */
+    }
+
+    .projects-title {
+        /* Style for the projects title at the top */
+        font-size: 2.5rem;  /* Font size */
+        font-weight: bold;  /* Bold font for impact */
+        margin: 1.5rem auto;   /* Automatic horizontal margins center the element */
+        background: linear-gradient(1550deg, yellow, hotpink);    /* Gradient background from hotpink to yellow */
+        background-clip: text; /* Clip the background to the text (standard) */
+        -webkit-background-clip: text;  /* Clip the background to the text for WebKit browsers */
+        color: transparent; /* Transparent text color so that the gradient shows */
+        -webkit-text-fill-color: transparent;   /* Make text fill transparent to reveal the gradient */
+        display: inline-block;  /* Helps ensure proper clipping in some browsers */
+    }
     .container {
         /* Container defines a grid layout for the project cards with three equal columns */
         display: grid;  /* Apply CSS Grid layout */
@@ -94,7 +111,7 @@
         background-size: 200% 200%; /* Create a large background for animation */
         z-index: -2;    /* Place the gradient behind the card */
         filter: blur(8px);  /* Blur the gradient to simulate a glow */
-        animation: borderAnim 7s linear infinite;    /* Animate the gradient for movement */
+        animation: borderAnim 6s linear infinite;    /* Animate the gradient for movement */
         border-radius: inherit; /* Inherit the border radius from the .card */
     }
 
@@ -173,6 +190,11 @@
         color: #efb7ce; /* Change icon color to light pink when hovered */
     }
 </style>
+
+
+<div class="title-container">   <!-- Wrap the title in a container that centers its content -->
+    <h1 class="projects-title">Projects</h1>    <!-- Title for the projects section with a yellow to pink gradient -->
+</div>
 
 
 <div class="container"> <!-- Main container div holding all project cards -->
