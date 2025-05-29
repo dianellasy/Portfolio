@@ -6,9 +6,11 @@
         {
             name: "Country Life Cafe",
             image: "/projects/country_life_cafe.png",
-            text: `𐙚 Programmed a video game using Unity and C# to promote the idea of sustainable farming
-                   𐙚 Produced ingredients on the farm and built the order in the half kitchen and half window scene in a specific amount of time for three days
-                   𐙚 Obtained tokens if the order is successfully served, and the user wins if a certain number of tokens is reached`,
+            text: `♡ Programmed a video game using Unity and C# to promote the idea of sustainable farming
+
+♡ Produced ingredients on the farm and built the order in the half kitchen and half window scene in a specific amount of time for three days
+
+♡ Obtained tokens if the order is successfully served, and the user wins if a certain number of tokens is reached`,
             icons: [
                 { iconClass: "fab fa-github", link: "https://github.com/emilyytsai/CountryLifeCafe" }
             ]
@@ -17,9 +19,11 @@
         {
             name: "Out of this World Cafe",
             image: "/projects/out_of_this_world_cafe.png",
-            text: `𐙚 Developed during the 24-hour hackathon, FullyHacks 2025, with 250+ participants, and won Best Game Project 
-                   𐙚 Implemented a restaurant tycoon video game utilizing C# and Unity, where a group of animals have been stranded in space for a period of time
-                   𐙚 Served the animals ice cream, and if they are satisfied, they will go home with the cafe owner back to Earth`,
+            text: `♡ Developed during the 24-hour hackathon, FullyHacks 2025, with 250+ participants, and won Best Game Project 
+            
+♡ Implemented a restaurant tycoon video game utilizing C# and Unity, where a group of animals have been stranded in space for a period of time
+
+♡ Served the animals ice cream, and if they are satisfied, they will go home with the cafe owner back to Earth`,
             icons: [
                 { iconClass: "fab fa-github", link: "https://github.com/emilyytsai/OutOfThisWorldCafe" }
             ]
@@ -28,8 +32,9 @@
         {
             name: "Association for Computing Machinery CSUF Website (acmcsuf.com)",
             image: "/projects/acm_design_portfolio.png",
-            text: `𐙚 Contribute to the Association for Computing Machinery CSUF’s website, the largest open-source project for the chapter club, by fixing issues listed on GitHub and creating pull requests
-                   𐙚 Redesign a page that showcases portfolios utilizing Figma, JSON, and Svelte`,
+            text: `♡ Contribute to the Association for Computing Machinery CSUF’s website, the largest open-source project for the chapter club, by fixing issues listed on GitHub and creating pull requests
+
+♡ Redesign a page that showcases portfolios utilizing Figma, JSON, and Svelte`,
             icons: [
                 { iconClass: "fab fa-github", link: "https://github.com/EthanThatOneKid/acmcsuf.com/pull/1178" }
             ]
@@ -37,19 +42,21 @@
 
         {
             name: "Book Store (Doubly Linked List Adapter)",
-            text: `𐙚 Implemented a custom doubly linked list class and a wrapper class, an adapter, in C++ that enables user code to interact directly with a simulation of a bookstore
-                   𐙚 Maintained a list of books, sells books to a customer, and allows the user to add new books and view a list of all books in the inventory`,
+            text: `♡ Implemented a custom doubly linked list class and a wrapper class, an adapter, in C++ that enables user code to interact directly with a simulation of a bookstore
+
+♡ Maintained a list of books, sells books to a customer, and allows the user to add new books and view a list of all books in the inventory`,
         },
 
         {
             name: "Food Wastage Tracker",
-            text: `𐙚 Built a final Object-Oriented Programming course project, a web-based application utilizing C++, that empowers individuals to track, manage, and minimize their food waste`,
+            text: `♡ Built a final Object-Oriented Programming course project, a web-based application utilizing C++, that empowers individuals to track, manage, and minimize their food waste`,
         },
 
         {
             name: "AP Computer Science Principles Create Performance Task",
-            text: `𐙚 Utilized JavaScript to implement a web-based application that prompts the user with a few questions and then devises custom recommendations for their summer activities
-                   𐙚 Personalized users’ interests to present a concrete, comprehensive list of activities to do in the summer`,
+            text: `♡ Utilized JavaScript to implement a web-based application that prompts the user with a few questions and then devises custom recommendations for their summer activities
+
+♡ Personalized users’ interests to present a concrete, comprehensive list of activities to do in the summer`,
         }
     ];
 </script>
@@ -158,7 +165,8 @@
         font-weight: bold;  /* Bold text */
         color: #fff;    /* White color for readability against dark background */
         text-align: center; /* Center the project name */
-        margin-bottom: 1rem;    /* Spacing below the project name */
+        margin: 0.5rem 0 1rem 0; /* Consistent margins (top 0.5rem, bottom: 1rem, left/right: 0) */
+        line-height: 1.2;   /* A slighly tighter line-height for short titles */
     }
 
     .project-image {
@@ -174,7 +182,8 @@
         /* Style for the multi-line project text */
         color: #ccc;    /* Light gray color for the descriptive text */
         font-size: 1rem;    /* Standard font size for text */
-        margin-bottom: 1rem;    /* Spacing below the text block */
+        margin: 1rem 0;    /* Consistent top and bottom margins */
+        line-height: 1.5;   /* Uniform line-height for readability */
         text-align: center; /* Center the text */
         white-space: pre-wrap;  /* Preserve whitespace and line breaks from the template literal */
     }
@@ -184,6 +193,7 @@
         display: flex;  /* Use Flexbox for layout of icons */
         justify-content: center;    /* Center the icons horizontally */
         gap: 1rem;  /* Set even spacing between each icon */
+        margin-top: 0.5rem; /* Adds some breathing room above icons */
     }
 
     .project-icons a {
