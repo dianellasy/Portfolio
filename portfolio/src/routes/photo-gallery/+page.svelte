@@ -25,7 +25,6 @@
         <div class="love-letter-container"> <!-- The love letter container wraps both the love letter and tooltip -->
             <span class="love-letter">💌</span> <!-- This is the main love letter icon that remains visible -->
             <div class="tooltip">   <!-- The tooltip appears when hovering over the love letter container -->
-                <span class="tooltip-icon">💌</span>    <!-- The left side contains a small rectangle containing the love letter -->
                 <span class="tooltip-text">Thank you for visiting my portfolio! ❤️, Dianella Sy</span>  <!-- The right side contains the textual message -->
             </div>
         </div>
@@ -146,20 +145,6 @@
         /* Show the tooltip when the love-letter-container is hovered */
         visibility: visible;    /* Make the tooltip visible on hover */
         opacity: 1; /* Set opacity to fully opaque */
-    }
-
-    .tooltip-icon {
-        /* Styling for the left rectangle inside the tooltip that contains a small love letter icon */
-        display: flex;  /* Use flexbox to center the icon */
-        align-items: center;    /* Vertically center the love letter icon */
-        justify-content: center;    /* Horizontally center the love leter icon */
-        background-color: #ff4d4d;  /* Red background to match the love letter theme */
-        color: #fff;    /* White text color */
-        width: 1.2rem;  /* Fixed width for the icon container */
-        height: 1.2rem; /* Fixed height for the icon container */
-        border-radius: 3px; /* Slightly rounded corners */
-        margin-right: 0.5rem;   /* Margin to separate the icon from the text */
-        font-size: 0.8rem;  /* Reduced font size for the icon */
     }
 
     .tooltip-text {
