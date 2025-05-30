@@ -22,7 +22,13 @@
 
 <div class="banner">    <!-- Main banner container that will always stay at the top of the viewport -->
     <div class="banner-left">   <!-- Left section contains a love letter icon with a tooltip using the title attribute -->
-        <span class="love-letter" title="thank you for visiting my portfolio! ❤️, dianella sy">💌</span>   <!-- The love letter icon displays a tooltip on hover -->
+        <div class="love-letter-container"> <!-- The love letter container wraps both the love letter and tooltip -->
+            <span class="love-letter">💌</span> <!-- This is the main love letter icon that remains visible -->
+            <div class="tooltip">   <!-- The tooltip appears when hovering over the love letter container -->
+                <span class="tooltip-icon">💌</span>    <!-- The left side contains a small rectangle containing the love letter -->
+                <span class="tooltip-text">Thank you for visiting my portfolio! ❤️, Dianella Sy</span>  <!-- The right side contains the textual message -->
+            </div>
+        </div>
     </div>
 
     <div class="banner-center"> <!-- Center section contains an interactive video element -->
@@ -65,28 +71,36 @@
         padding: 1rem 2rem; /* Add padding inside the banner (1rem top/bottom, 2rem left/right) */
         background-color: #f0f0f0;  /* Light gray background color */
         z-index: 1000;  /* High z-index ensures the banner stays above other content */
-    }
-
-    .banner-left,
-    .banner-center,
-    .banner-right {
-        flex: 1;    /* Each section takes an equal share of the available space */
+        overflow: visible;  /* Allow overflowing content like tooltips */
     }
 
     .banner-left {
+        flex: 0 1 auto; /* Only takes as much space as its content needs */
         text-align: left;   /* Align content to the left in the left section */
     }
 
     .banner-center {
+        flex: 0 1 auto; /* Only as much width as needed by the video */
         text-align: center; /* Center align content in the center section */
+        margin: 0 1rem;    /* Provides some horizontal spacing */
     }
 
     .banner-right {
+        flex: 0 1 auto; /* Grow the right section if needed */
+        margin-left: auto;  /* Push it to the far right */
         text-align: right;  /* Align content to the right in the right section */
         display: flex;  /* Uses flexbox for layout */
-        justify-content: flex-end;  /* Aligns links to the right */
-        flex-wrap: wrap;    /* Allows links to wrap to a new line if needed */
-        gap: 0.5rem;    /* Adds space between links */
+        align-items: center;    /* Center links vertically */
+        gap: 1.6rem;    /* Adds space between links */
+        min-width: 0;   /* Allows the section to shrink if needed  */
+        transform: translateX(-50px);   /* This moves the links 20px to the left */
+    }
+
+    .love-letter-container {
+        /* Love letter container to allow tooltip positioning */
+        position: relative; /* Set to relative so that the tooltip can position absolutely within */
+        display: inline-block;  /* Ensures the container fits the content size */
+        overflow: visible;  /* Prevent clipping of tooltip */
     }
 
     .love-letter {
@@ -95,11 +109,70 @@
         cursor: default;    /* Use the default cursor since the element is not clickable */
     }
 
+    .tooltip {
+        /* Tooltip container styling */
+        visibility: hidden; /* Hide the tooltip initially */
+        opacity: 0; /* Fully transparent initially */
+        background-color: #24292e;  /* Dark background */
+        color: #fff;    /* White text */
+        border-radius: 6px; /* Rounded corners for a smooth look */
+        padding: 0.5rem 0.75rem;    /* Padding inside the tooltip */
+        position: absolute; /* Position relative to the love-letter-container */
+        bottom: 120%;   /* Position the tooltip above the heart */
+        left: 50%;  /* Center the tooltip horizontally over the heart */
+        transform: translateX(-50%);    /* Adjust centering by moving left 50% of its own width */
+        transition: opacity 0.3s ease, visibility 0.3s ease;    /* Fade in/out transition for smooth appearance */
+        display: flex;  /* Use flexbox to align tooltip icon and text */
+        align-items: center;    /* Vertically center the tooltip content */
+        white-space: nowrap;    /* Prevent text from wrapping */
+        font-size: 0.85rem; /* Smaller font size for the tooltip text */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);   /* Add subtle shadow for a raised effect */
+        z-index: 10000; /* High z-index to ensure it sits above other elements */
+    }
+
+    .tooltip::after {
+        /* Tooltip arrow styling using a pseudo-element */
+        content: "";    /* Empty content - used purely for decoration */
+        position: absolute; /* Position absolutely within the tooltip */
+        top: 100%;  /* Place the arrow at the bottom of the tooltip */
+        left: 50%;  /* Center the arrow horizontally */
+        transform: translateX(-50%);    /* Adjust centering */
+        border-width: 5px;  /* Define the size of the arrow */
+        border-style: solid;    /* Use solid borders to create the triangle arrow */
+        border-color: #24292e transparent transparent transparent;  /* Arrow color matches tooltip background */
+    }
+
+    .love-letter-container:hover .tooltip {
+        /* Show the tooltip when the love-letter-container is hovered */
+        visibility: visible;    /* Make the tooltip visible on hover */
+        opacity: 1; /* Set opacity to fully opaque */
+    }
+
+    .tooltip-icon {
+        /* Styling for the left rectangle inside the tooltip that contains a small love letter icon */
+        display: flex;  /* Use flexbox to center the icon */
+        align-items: center;    /* Vertically center the love letter icon */
+        justify-content: center;    /* Horizontally center the love leter icon */
+        background-color: #ff4d4d;  /* Red background to match the love letter theme */
+        color: #fff;    /* White text color */
+        width: 1.2rem;  /* Fixed width for the icon container */
+        height: 1.2rem; /* Fixed height for the icon container */
+        border-radius: 3px; /* Slightly rounded corners */
+        margin-right: 0.5rem;   /* Margin to separate the icon from the text */
+        font-size: 0.8rem;  /* Reduced font size for the icon */
+    }
+
+    .tooltip-text {
+        /* Tooltip text styling */
+        display: inline-block;  /* Display as inline block so it stays with the icon */
+    }
+
     .nav-item {
         /* Styling for the navigation links in the right section */
         text-decoration: none;  /* Remove the default underline from links */
         color: #333;    /* Dark gray text color */
         font-weight: bold;  /* Bold font weight for emphasis */
+        white-space: nowrap;    /* Prevent the text from wrapping */
     }
 
     .nav-item:hover {
@@ -128,6 +201,7 @@
         .banner-right {
             justify-content: center;
             margin-top: 0.5rem;
+            gap: 1rem;
         }
     }
 </style>
