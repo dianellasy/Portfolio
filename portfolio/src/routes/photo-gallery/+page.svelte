@@ -65,10 +65,10 @@
         top: 0; /* Position it at the very top of the page */
         left: 0;    /* Align it to the left edge of the viewport */
         width: 100%;    /* Make the banner span the entire width of the viewport */
+        height: 80px;   /* Fixed height */
         display: flex;  /* Use Flexbox for arranging child elements horizontally */
         justify-content: space-between; /* Evenly distribute the space between the left, center, and right sections */
         align-items: center;    /* Vertically center the content */
-        padding: 1rem 2rem; /* Add padding inside the banner (1rem top/bottom, 2rem left/right) */
         background-color: #f0f0f0;  /* Light gray background color */
         z-index: 1000;  /* High z-index ensures the banner stays above other content */
         overflow: visible;  /* Allow overflowing content like tooltips */
@@ -76,24 +76,24 @@
 
     .banner-left {
         flex: 0 1 auto; /* Only takes as much space as its content needs */
-        text-align: left;   /* Align content to the left in the left section */
+        margin-left: 2rem;  /* Adds left spacing */
+        z-index: 1010;
     }
 
     .banner-center {
-        flex: 0 1 auto; /* Only as much width as needed by the video */
-        text-align: center; /* Center align content in the center section */
-        margin: 0 1rem;    /* Provides some horizontal spacing */
+        position: absolute; /* Remove from the flex flow */
+        left: 50%;  /* Position left edge at 50% of the banner */
+        transform: translateX(-50%);    /* Shift left half of the container's width to center it */
+        z-index: 1005;  /* Ensure it appears between the left and right sections if needed */
     }
 
     .banner-right {
         flex: 0 1 auto; /* Grow the right section if needed */
-        margin-left: auto;  /* Push it to the far right */
+        margin-right: 2rem;  /* Adds right spacing */
+        z-index: 1010;
         text-align: right;  /* Align content to the right in the right section */
         display: flex;  /* Uses flexbox for layout */
-        align-items: center;    /* Center links vertically */
         gap: 1.6rem;    /* Adds space between links */
-        min-width: 0;   /* Allows the section to shrink if needed  */
-        transform: translateX(-50px);   /* This moves the links 20px to the left */
     }
 
     .love-letter-container {
@@ -196,12 +196,21 @@
         .banner {
             flex-direction: column;
             padding: 0.5rem 1rem;
+            height: auto;   /* Let height adjust */
+        }
+
+        .banner-center {
+            position: relative;
+            left: 0;
+            transform: none;
+            margin: 0.5rem 0;
         }
 
         .banner-right {
             justify-content: center;
-            margin-top: 0.5rem;
+            margin: 0;
             gap: 1rem;
+            transform: none;
         }
     }
 </style>
