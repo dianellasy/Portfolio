@@ -11,6 +11,7 @@
         if (video_element) {
             video_element.pause();  // Pause the video
             video_element.currentTime = 0;  // Reset the video's current time to 0 so it starts over
+            video_element.load();   // Reset the video to its initial state
         }
     }
 
