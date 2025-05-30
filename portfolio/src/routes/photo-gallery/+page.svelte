@@ -2,6 +2,9 @@
     import { goto } from '$app/navigation'; // Import the SvelteKit navigation function to programatically route the user
 
     let video_element: HTMLVideoElement | null = null;  // Declare a variable named video_element with an explicit type; the element is HTMLVideoElement or null when not yet bound
+    
+    let is_message_first = true;    // Declare a boolean flag to track which message should be shown
+    let tooltip_text = "Thank you for visiting my portfolio! ❤️, Dianella Sy"; // Set the initial tooltip text
 
     function playVideo() {  // Function to start the video when the mouse hovers over it
         if (video_element) video_element.play() // Check that the video element exists before calling its play() method
@@ -18,15 +21,22 @@
     function navigateToHome() { // Function to navigate to the home page when the video is clicked
         goto('/');  // Use the goto function to navigate to the root path
     }
+
+    function updateTooltip() {  // Function inverts the flag and sets the tooltip text accordingly
+        is_message_first = !is_message_first;   // Toggle the boolean flag
+        tooltip_text = is_message_first // Set tooltip text based on the flag
+            ? "Thank you for visiting my portfolio! ❤️, Dianella Sy"
+            : 'One quote I live by is, "If you chase your dreams, you can catch them" - Tadej Pogačar 👩🏻‍💻📝🎧❤️‍🔥'
+    }
 </script>
 
 
 <div class="banner">    <!-- Main banner container that will always stay at the top of the viewport -->
     <div class="banner-left">   <!-- Left section contains a love letter icon with a tooltip using the title attribute -->
-        <div class="love-letter-container"> <!-- The love letter container wraps both the love letter and tooltip -->
+        <div class="love-letter-container" on:mouseenter={updateTooltip} role="button" tabindex="0"> <!-- The love letter container wraps both the love letter and tooltip -->
             <span class="love-letter">💌</span> <!-- This is the main love letter icon that remains visible -->
             <div class="tooltip">   <!-- The tooltip appears when hovering over the love letter container -->
-                <span class="tooltip-text">Thank you for visiting my portfolio! ❤️, Dianella Sy</span>  <!-- The right side contains the textual message -->
+                <span class="tooltip-text">{tooltip_text}</span>  <!-- The right side contains the textual message -->
             </div>
         </div>
     </div>
