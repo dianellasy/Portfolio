@@ -118,9 +118,9 @@
         border-radius: 6px; /* Rounded corners for a smooth look */
         padding: 0.5rem 0.75rem;    /* Padding inside the tooltip */
         position: absolute; /* Position relative to the love-letter-container */
-        bottom: 120%;   /* Position the tooltip above the heart */
-        left: 50%;  /* Center the tooltip horizontally over the heart */
-        transform: translateX(-50%);    /* Adjust centering by moving left 50% of its own width */
+        left: 120%;  /* Position tooltip to the right of the love letter */
+        top: 50%;   /* Center vertically relative to the love letter */
+        transform: translateY(-50%);    /* Adjust vertical centering */
         transition: opacity 0.3s ease, visibility 0.3s ease;    /* Fade in/out transition for smooth appearance */
         display: flex;  /* Use flexbox to align tooltip icon and text */
         align-items: center;    /* Vertically center the tooltip content */
@@ -134,12 +134,12 @@
         /* Tooltip arrow styling using a pseudo-element */
         content: "";    /* Empty content - used purely for decoration */
         position: absolute; /* Position absolutely within the tooltip */
-        top: 100%;  /* Place the arrow at the bottom of the tooltip */
-        left: 50%;  /* Center the arrow horizontally */
-        transform: translateX(-50%);    /* Adjust centering */
+        top: 50%;  /* Center vertically on tooltip */
+        left: -5px;  /* Place arrow on the left edge */
+        transform: translateY(-50%);    /* Adjust vertical centering */
         border-width: 5px;  /* Define the size of the arrow */
         border-style: solid;    /* Use solid borders to create the triangle arrow */
-        border-color: #24292e transparent transparent transparent;  /* Arrow color matches tooltip background */
+        border-color: transparent #24292e transparent transparent;  /* Arrow color matches tooltip background */
     }
 
     .love-letter-container:hover .tooltip {
@@ -210,7 +210,6 @@
             justify-content: center;
             margin: 0;
             gap: 1rem;
-            transform: none;
         }
     }
 </style>
