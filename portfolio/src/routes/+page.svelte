@@ -1,3 +1,4 @@
+
 <style> 
     /* Style block for component-specific styling */
     .top-left {
@@ -101,6 +102,12 @@
         <!-- Each button is wrapped in an <a> tag pointing to a different page route -->
         <a href="/about-me">
             <button>𐙚 About Me</button>
+        </a>
+        <a href="/projects">
+            <button>𐙚 Projects</button>
+        </a>
+        <a href="/photo-gallery">
+            <button>𐙚 Photo Gallery</button>
         </a>
     </div>
 </div>
