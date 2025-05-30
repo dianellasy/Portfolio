@@ -32,6 +32,7 @@
 
     <div class="banner-center"> <!-- Center section contains an interactive video element -->
         <video
+            disablepictureinpicture
             bind:this={video_element}
             src="/banner/name_banner.mp4"
             poster="/banner/name_banner.png"

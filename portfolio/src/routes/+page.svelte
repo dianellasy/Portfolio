@@ -84,11 +84,18 @@
 
 <div class="middle-container">
      <!-- Container for the name banner video, positioned using the .middle-container class -->
-     <video autoplay loop muted playsinline>
-            <!-- Video element configured to autoplay, loop, be muted and play inline -->
-            <source src="/home/name_banner.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-         </video>
+     <video 
+        autoplay 
+        loop 
+        muted 
+        playsinline
+        disablepictureinpicture
+        controlslist="nopictureinpicture noremoteplayback"
+    >
+        <!-- Video element configured to autoplay, loop, be muted and play inline -->
+        <source src="/home/name_banner.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     
     <div class="button-container">
         <!-- Each button is wrapped in an <a> tag pointing to a different page route -->
