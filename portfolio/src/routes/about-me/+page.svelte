@@ -1,3 +1,36 @@
+<script lang="ts">
+    import { goto } from '$app/navigation'; // Import the SvelteKit navigation function to programatically route the user
+
+    let video_element: HTMLVideoElement | null = null;  // Declare a variable named video_element with an explicit type; the element is HTMLVideoElement or null when not yet bound
+    
+    let is_message_first = true;    // Declare a boolean flag to track which message should be shown
+    let tooltip_text = 'One quote I live by is, "If you chase your dreams, you can catch them" - Tadej Pogačar 👩🏻‍💻📝🎧❤️‍🔥'; // Set the initial tooltip text
+
+    function playVideo() {  // Function to start the video when the mouse hovers over it
+        if (video_element) video_element.play() // Check that the video element exists before calling its play() method
+    }
+
+    function pauseVideo() { // Function to pause the video when the mouse leaves it, and reset its playback time
+        if (video_element) {
+            video_element.pause();  // Pause the video
+            video_element.currentTime = 0;  // Reset the video's current time to 0 so it starts over
+            video_element.load();   // Reset the video to its initial state
+        }
+    }
+
+    function navigateToHome() { // Function to navigate to the home page when the video is clicked
+        goto('/');  // Use the goto function to navigate to the root path
+    }
+
+    function updateTooltip() {  // Function inverts the flag and sets the tooltip text accordingly
+        is_message_first = !is_message_first;   // Toggle the boolean flag
+        tooltip_text = is_message_first // Set tooltip text based on the flag
+            ? 'One quote I live by is, "If you chase your dreams, you can catch them" - Tadej Pogačar 👩🏻‍💻📝🎧❤️‍🔥'
+            : "Thank you for visiting my portfolio! ❤️, Dianella Sy"
+    }
+</script>
+
+
 <svelte:head>
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
@@ -6,6 +39,151 @@
 </svelte:head>
 
 <style>
+    .banner {
+        /* Style for the banner container */
+        position: fixed;    /* Fix the banner's position relative to the viewport so it does not scroll */
+        top: 0; /* Position it at the very top of the page */
+        left: 0;    /* Align it to the left edge of the viewport */
+        width: 100%;    /* Make the banner span the entire width of the viewport */
+        height: 80px;   /* Fixed height */
+        display: flex;  /* Use Flexbox for arranging child elements horizontally */
+        justify-content: space-between; /* Evenly distribute the space between the left, center, and right sections */
+        align-items: center;    /* Vertically center the content */
+        /* background-color: #efb7ce;  /* Light gray background color */ 
+        background-color: #202020;  /* Light gray background color */
+        z-index: 1000;  /* High z-index ensures the banner stays above other content */
+        overflow: visible;  /* Allow overflowing content like tooltips */
+    }
+
+    .banner-left {
+        flex: 0 1 auto; /* Only takes as much space as its content needs */
+        margin-left: 2rem;  /* Adds left spacing */
+        z-index: 1010;
+    }
+
+    .banner-center {
+        position: absolute; /* Remove from the flex flow */
+        left: 50%;  /* Position left edge at 50% of the banner */
+        transform: translateX(-50%);    /* Shift left half of the container's width to center it */
+        z-index: 1005;  /* Ensure it appears between the left and right sections if needed */
+    }
+
+    .banner-right {
+        flex: 0 1 auto; /* Grow the right section if needed */
+        margin-right: 2rem;  /* Adds right spacing */
+        z-index: 1010;
+        text-align: right;  /* Align content to the right in the right section */
+        display: flex;  /* Uses flexbox for layout */
+        gap: 1.6rem;    /* Adds space between links */
+    }
+
+    .love-letter-container {
+        /* Love letter container to allow tooltip positioning */
+        position: relative; /* Set to relative so that the tooltip can position absolutely within */
+        display: inline-block;  /* Ensures the container fits the content size */
+        overflow: visible;  /* Prevent clipping of tooltip */
+    }
+
+    .love-letter {
+        /* Styling for the love letter icon in the left section */
+        font-size: 1.5rem;  /* Increase the love letter icon's size for better visibility */
+        cursor: default;    /* Use the default cursor since the element is not clickable */
+    }
+
+    .tooltip {
+        /* Tooltip container styling */
+        visibility: hidden; /* Hide the tooltip initially */
+        opacity: 0; /* Fully transparent initially */
+        background-color: #24292e;  /* Dark background */
+        color: #fff;    /* White text */
+        border-radius: 6px; /* Rounded corners for a smooth look */
+        padding: 0.5rem 0.75rem;    /* Padding inside the tooltip */
+        position: absolute; /* Position relative to the love-letter-container */
+        left: 120%;  /* Position tooltip to the right of the love letter */
+        top: 50%;   /* Center vertically relative to the love letter */
+        transform: translateY(-50%);    /* Adjust vertical centering */
+        transition: opacity 0.3s ease, visibility 0.3s ease;    /* Fade in/out transition for smooth appearance */
+        display: flex;  /* Use flexbox to align tooltip icon and text */
+        align-items: center;    /* Vertically center the tooltip content */
+        white-space: nowrap;    /* Prevent text from wrapping */
+        font-size: 0.85rem; /* Smaller font size for the tooltip text */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);   /* Add subtle shadow for a raised effect */
+        z-index: 10000; /* High z-index to ensure it sits above other elements */
+    }
+
+    .tooltip::after {
+        /* Tooltip arrow styling using a pseudo-element */
+        content: "";    /* Empty content - used purely for decoration */
+        position: absolute; /* Position absolutely within the tooltip */
+        top: 50%;  /* Center vertically on tooltip */
+        left: -5px;  /* Place arrow on the left edge */
+        transform: translateY(-50%);    /* Adjust vertical centering */
+        border-width: 5px;  /* Define the size of the arrow */
+        border-style: solid;    /* Use solid borders to create the triangle arrow */
+        border-color: transparent #24292e transparent transparent;  /* Arrow color matches tooltip background */
+    }
+
+    .love-letter-container:hover .tooltip {
+        /* Show the tooltip when the love-letter-container is hovered */
+        visibility: visible;    /* Make the tooltip visible on hover */
+        opacity: 1; /* Set opacity to fully opaque */
+    }
+
+    .tooltip-text {
+        /* Tooltip text styling */
+        display: inline-block;  /* Display as inline block so it stays with the icon */
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .nav-item {
+        /* Styling for the navigation links in the right section */
+        text-decoration: none;  /* Remove the default underline from links */
+        color: white;    /* Dark gray text color */
+        font-weight: bold;  /* Bold font weight for emphasis */
+        white-space: nowrap;    /* Prevent the text from wrapping */
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .nav-item:hover {
+        text-decoration: underline; /* Underline the navigation links on hover for a visual cue */
+        color: #efb7ce;
+    }
+
+    .banner-center video {
+        /* Styling for the video element in the center section */
+        height: 78px;   /* Set a fixed height for the video */
+        cursor: pointer;    /* Change the cursor to a pointer to indicate it is clickable */
+        transition: transform 0.2s ease; /* Add a smooth transition for scaling on hover */
+    }
+
+    .banner-center video:hover,
+    .banner-center video:focus {
+        transform: scale(1.05); /* On hover, scale the video element slightly to create a zoom effect */
+    }
+
+    /* Responsive tweaks for smaller screens */
+    @media screen and (max-width: 600px) {
+        .banner {
+            flex-direction: column;
+            padding: 0.5rem 1rem;
+            height: auto;   /* Let height adjust */
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .banner-center {
+            position: relative;
+            left: 0;
+            transform: none;
+            margin: 0.5rem 0;
+        }
+
+        .banner-right {
+            justify-content: center;
+            margin: 0;
+            gap: 1rem;
+        }
+    }
+
     .wrapper {
         /* Wrapper for the entire page content */
         padding: 20px;
@@ -21,7 +199,7 @@
         /* Image that will appear on the left side */
         width: 380px;   /* Set a fixed width of 380px */
         margin-left: 240px;  /* Shifts the image a little to the right */
-        margin-top: 50px;  /* Moves the image up a bit */
+        margin-top: 80px;  /* Moves the image up a bit */
         margin-right: 190px; /* Space between the image and the text */
     }
 
@@ -58,6 +236,12 @@
         display: inline-block;
         cursor: pointer;
         text-decoration: none;
+        transition: transform 0.3s ease;    /* Smooth transition for the lift effect */
+    }
+
+    .social-icons a:hover {
+        /* Lifts the icon up when hovered */
+        transform: translateY(-5px);
     }
 
     .social-icons svg {
@@ -94,7 +278,7 @@
     .content h1 {
         /* Define title styles */
         font-size: 42px;    /* Title is 42 px */
-        margin-top: 60px;   /* Move the title lower */
+        margin-top: 80px;   /* Move the title lower */
         margin-bottom: 10px;    /* Spacing between title abnd paragraph */
     }
 
@@ -114,6 +298,44 @@
 </style>
 
 
+<div class="banner">    <!-- Main banner container that will always stay at the top of the viewport -->
+    <div class="banner-left">   <!-- Left section contains a love letter icon with a tooltip using the title attribute -->
+        <div class="love-letter-container" on:mouseenter={updateTooltip} role="button" tabindex="0"> <!-- The love letter container wraps both the love letter and tooltip -->
+            <span class="love-letter">💌</span> <!-- This is the main love letter icon that remains visible -->
+            <div class="tooltip">   <!-- The tooltip appears when hovering over the love letter container -->
+                <span class="tooltip-text">{tooltip_text}</span>  <!-- The right side contains the textual message -->
+            </div>
+        </div>
+    </div>
+
+    <div class="banner-center"> <!-- Center section contains an interactive video element -->
+        <video
+            disablepictureinpicture
+            bind:this={video_element}
+            src="/banner/name_banner.mp4"
+            poster="/banner/name_banner.png"
+            on:mouseover={playVideo}
+            on:focus={playVideo}
+            on:mouseout={pauseVideo}
+            on:blur={pauseVideo}
+            on:click={navigateToHome}
+            muted
+            loop
+            tabindex="0"
+        >
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="banner-right">  <!-- Right section contains navigation links to different pages -->
+        <a class="nav-item" href="/">Home</a>
+        <a class="nav-item" href="/about-me">About Me</a>
+        <a class="nav-item" href="/projects">Projects</a>
+        <a class="nav-item" href="/photo-gallery">Photo Gallery</a>
+    </div>
+</div>
+
+
 <div class="wrapper">
      <div class="top-container">
         <!-- Top container holds the image on the left and the content on the right -->
@@ -124,21 +346,46 @@
                 My name is <span class="pink-word">Dianella Sy</span>, and I am a third-year
                 undergraduate student majoring in <span class="pink-word">Computer Science </span>
                 at <span class="pink-word">California State University, Fullerton (CSUF)</span>.<br><br>
+
+                Before my dad retired, he was a Computer and Network Technician at the school district where 
+                I attended elementary school, so from a young age, I was exposed to computers. I was introduced 
+                to computer science in <span class="pink-word">fifth grade</span> and took coding lessons through 
+                <span class="pink-word">Code.org’s Minecraft Hour of Code Tutorials</span> and created my own 
+                <span class="pink-word">Flappy Bird Game</span>. Because of my long-term interest in computer 
+                science, in my junior year of high school, I took <span class="pink-word">AP Computer Science 
+                Principles</span>, an introductory college-level course, where I learned algorithms, programming, 
+                computer systems, networks, and data analysis. I was interested in learning more about computer 
+                science, so after taking the course and passing the AP exam, I chose to major in Computer Science 
+                at CSUF, where my older brother also attended college.<br><br>
                 
                 During my second year at CSUF, I was the <span class="pink-word">Treasurer</span> for
-                the chapter club, <span class="pink-word">Association for Computing Machinery-Women</span>. 
-                I also attended my first hackathon, <span class="pink-word">FullyHacks 2025</span>, where I 
-                won <span class="pink-word">Best Game Project</span>.<br><br> 
+                the chapter club, <span class="pink-word">Association for Computing Machinery-Women</span>, where I
+                managed all financial affairs and budgeting, as well as maintained the agency accounts for the organization.
+                I also encouraged and supported 15 women pursuing a computer science major and hosted 15+ technical 
+                workshops. In addition to being Treasurer, in the spring semester, I attended my first hackathon, 
+                <span class="pink-word">FullyHacks 2025</span>, where I won <span class="pink-word">Best Game Project</span>.<br><br> 
 
-                For the upcoming year as a third-year student, I will be a <span class="pink-word">Computer 
-                Science Supplemental Instruction Leader</span> and the <span class="pink-word">Webmaster</span>
-                and <span class="pink-word">Open Source Co-Team Lead</span> for the CSUF chapter club, 
-                <span class="pink-word">Association for Computing Machinery</span>.<br><br>
+                This summer, I am participating in the <span class="pink-word">2025 CIC Summer Research Program</span> at CSUF. During this seven-week 
+                research experience, I am exploring <span class="pink-word">Pairs Trading</span> by engaging in structured virtual lectures, 
+                working on a research project, collaborating with faculty and peers, and gaining valuable experience applying computer science 
+                concepts to real-world problems. In addition, I was also <span class="pink-word">1</span> out of the <span class="pink-word">50</span>, 
+                from an applicant pool of nearly <span class="pink-word">900</span>, selected to attend the <span class="pink-word">CSU AI Summer Camp 2025</span>
+                at Cal Poly San Luis Obispo, sponsored by <span class="pink-word">Amazon Web Services (AWS)</span>. I will be working with a team to solve pressing 
+                challenges and opportunities in the CSU system, applying AI technologies through hands-on workshops and mentored projects, and pitching my team’s 
+                ideas and prototypes to my peers and mentors in a 5-day <span class="pink-word">applied AI hackathon</span>.<br><br>
 
-                After I graduate, I plan to pursue a <span class="pink-word">master's degree</span> and a
-                <span class="pink-word">PhD</span> while working as a software engineer. I am excited and looking
-                forward to applying all of the topics I learned in my courses to the real world, expanding my
-                technical skills, and gaining hands-on experience.
+                For the upcoming year as a third-year student, I will be a <span class="pink-word">Computer Science Supplemental Instruction Leader</span>, where I 
+                facilitate two group sessions weekly where students meet to improve their understanding of the course materials in a computer science class. I will
+                also be the <span class="pink-word">Webmaster</span> and <span class="pink-word">Open Source Co-Team Lead</span> for the CSUF chapter club, 
+                <span class="pink-word">Association for Computing Machinery</span>. As Webmaster, I will maintain the Association for Computing Machinery CSUF’s website, 
+                <span class="pink-word">acmcsuf.com</span>, the largest open-source project for the chapter club, and update it with new information. I will also guide 
+                students with issues listed on <span class="pink-word">GitHub</span> and mentor how to solve the issue, providing hands-on experience in contributing to 
+                open-source projects. As Open Source Co-Team Lead, I will present and organize weekly technical workshops for students, such as instructing them to make a 
+                first contribution to the acmcsufoss organization, hands-on coding, and real-world open source projects.<br><br>
+
+                After I graduate, I plan to pursue a <span class="pink-word">master's degree</span> and a <span class="pink-word">PhD</span> while working as a software engineer. 
+                I am excited and looking forward to following in my dad's footsteps, applying all of the topics I learned in fifth grade through Code.org, AP Computer Science Principles, 
+                and my college courses to the real world, expanding my technical skills, and gaining hands-on experience.
             </p>
         </div>
      </div>
