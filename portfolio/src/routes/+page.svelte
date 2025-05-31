@@ -1,4 +1,3 @@
-
 <style> 
     /* Style block for component-specific styling */
     .top-left {
