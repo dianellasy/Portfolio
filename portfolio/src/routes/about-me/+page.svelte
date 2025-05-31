@@ -7,7 +7,7 @@
         "Thank you for visiting my portfolio! ❤️, Dianella Sy",
         'One quote I live by is, "If you chase your dreams, you can catch them" - Tadej Pogačar 👩🏻‍💻📝🎧❤️‍🔥',
         `Two of my favorite songs are "You Oughta Know" by Alanis Morisette and "Sweet Talkin' Woman" by ELO 🎸🎤🎶`,
-        "I love their songs so much that I attended both of their concerts at the Kia Forum in 2024! For Alanis' concert, I was selected to receive the physical copy of the setlist 🥹📄",
+        "I love their songs so much that I attended both of their concerts at the Kia Forum in 2024! 🥰",
         "My favorite hobbies include walking and riding my road bike on a trail, watching true crime shows, and spending time with my family and friends 🚵🏻‍♀️📺🫂"
     ];
 

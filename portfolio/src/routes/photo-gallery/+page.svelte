@@ -3,8 +3,16 @@
 
     let video_element: HTMLVideoElement | null = null;  // Declare a variable named video_element with an explicit type; the element is HTMLVideoElement or null when not yet bound
     
-    let is_message_first = true;    // Declare a boolean flag to track which message should be shown
-    let tooltip_text = "Thank you for visiting my portfolio! ❤️, Dianella Sy"; // Set the initial tooltip text
+    const messages = [
+        "Thank you for visiting my portfolio! ❤️, Dianella Sy",
+        'One quote I live by is, "If you chase your dreams, you can catch them" - Tadej Pogačar 👩🏻‍💻📝🎧❤️‍🔥',
+        `Two of my favorite songs are "You Oughta Know" by Alanis Morisette and "Sweet Talkin' Woman" by ELO 🎸🎤🎶`,
+        "I love their songs so much that I attended both of their concerts at the Kia Forum in 2024! 🥰",
+        "My favorite hobbies include walking and riding my road bike on a trail, watching true crime shows, and spending time with my family and friends 🚵🏻‍♀️📺🫂"
+    ];
+
+    let tooltip_text = messages[0]; // Initialize the tooltip content with the first message
+    let message_index = 0;  // A counter to track which message to show next
 
     function playVideo() {  // Function to start the video when the mouse hovers over it
         if (video_element) video_element.play() // Check that the video element exists before calling its play() method
@@ -22,51 +30,11 @@
         goto('/');  // Use the goto function to navigate to the root path
     }
 
-    function updateTooltip() {  // Function inverts the flag and sets the tooltip text accordingly
-        is_message_first = !is_message_first;   // Toggle the boolean flag
-        tooltip_text = is_message_first // Set tooltip text based on the flag
-            ? "Thank you for visiting my portfolio! ❤️, Dianella Sy"
-            : 'One quote I live by is, "If you chase your dreams, you can catch them" - Tadej Pogačar 👩🏻‍💻📝🎧❤️‍🔥'
+    function updateTooltip() {  // Function sets the tooltip text to the message at the current index, then increments the index so that the next time the pointer enters, the next message in order is shown
+        tooltip_text = messages[message_index]; // Set the tooltip text using the current index
+        message_index = (message_index + 1) % messages.length;  // Increment the index and wrap around to 0 when reaching the end
     }
 </script>
-
-
-<div class="banner">    <!-- Main banner container that will always stay at the top of the viewport -->
-    <div class="banner-left">   <!-- Left section contains a love letter icon with a tooltip using the title attribute -->
-        <div class="love-letter-container" on:mouseenter={updateTooltip} role="button" tabindex="0"> <!-- The love letter container wraps both the love letter and tooltip -->
-            <span class="love-letter">💌</span> <!-- This is the main love letter icon that remains visible -->
-            <div class="tooltip">   <!-- The tooltip appears when hovering over the love letter container -->
-                <span class="tooltip-text">{tooltip_text}</span>  <!-- The right side contains the textual message -->
-            </div>
-        </div>
-    </div>
-
-    <div class="banner-center"> <!-- Center section contains an interactive video element -->
-        <video
-            disablepictureinpicture
-            bind:this={video_element}
-            src="/banner/name_banner.mp4"
-            poster="/banner/name_banner.png"
-            on:mouseover={playVideo}
-            on:focus={playVideo}
-            on:mouseout={pauseVideo}
-            on:blur={pauseVideo}
-            on:click={navigateToHome}
-            muted
-            loop
-            tabindex="0"
-        >
-            Your browser does not support the video tag.
-        </video>
-    </div>
-
-    <div class="banner-right">  <!-- Right section contains navigation links to different pages -->
-        <a class="nav-item" href="/">Home</a>
-        <a class="nav-item" href="/about-me">About Me</a>
-        <a class="nav-item" href="/projects">Projects</a>
-        <a class="nav-item" href="/photo-gallery">Photo Gallery</a>
-    </div>
-</div>
 
 
 <style>
@@ -80,7 +48,8 @@
         display: flex;  /* Use Flexbox for arranging child elements horizontally */
         justify-content: space-between; /* Evenly distribute the space between the left, center, and right sections */
         align-items: center;    /* Vertically center the content */
-        background-color: #f0f0f0;  /* Light gray background color */
+        /* background-color: #efb7ce;  /* Light gray background color */ 
+        background-color: #202020;  /* Light gray background color */
         z-index: 1000;  /* High z-index ensures the banner stays above other content */
         overflow: visible;  /* Allow overflowing content like tooltips */
     }
@@ -118,6 +87,7 @@
         /* Styling for the love letter icon in the left section */
         font-size: 1.5rem;  /* Increase the love letter icon's size for better visibility */
         cursor: default;    /* Use the default cursor since the element is not clickable */
+        font-family: 'Open Sans', sans-serif;
     }
 
     .tooltip {
@@ -162,23 +132,26 @@
     .tooltip-text {
         /* Tooltip text styling */
         display: inline-block;  /* Display as inline block so it stays with the icon */
+        font-family: 'Open Sans', sans-serif;
     }
 
     .nav-item {
         /* Styling for the navigation links in the right section */
         text-decoration: none;  /* Remove the default underline from links */
-        color: #333;    /* Dark gray text color */
+        color: white;    /* Dark gray text color */
         font-weight: bold;  /* Bold font weight for emphasis */
         white-space: nowrap;    /* Prevent the text from wrapping */
+        font-family: 'Open Sans', sans-serif;
     }
 
     .nav-item:hover {
         text-decoration: underline; /* Underline the navigation links on hover for a visual cue */
+        color: #efb7ce;
     }
 
     .banner-center video {
         /* Styling for the video element in the center section */
-        height: 60px;   /* Set a fixed height for the video */
+        height: 78px;   /* Set a fixed height for the video */
         cursor: pointer;    /* Change the cursor to a pointer to indicate it is clickable */
         transition: transform 0.2s ease; /* Add a smooth transition for scaling on hover */
     }
@@ -194,6 +167,7 @@
             flex-direction: column;
             padding: 0.5rem 1rem;
             height: auto;   /* Let height adjust */
+            font-family: 'Open Sans', sans-serif;
         }
 
         .banner-center {
@@ -210,3 +184,41 @@
         }
     }
 </style>
+
+
+<div class="banner">    <!-- Main banner container that will always stay at the top of the viewport -->
+    <div class="banner-left">   <!-- Left section contains a love letter icon with a tooltip using the title attribute -->
+        <div class="love-letter-container" on:mouseenter={updateTooltip} role="button" tabindex="0"> <!-- The love letter container wraps both the love letter and tooltip -->
+            <span class="love-letter">💌</span> <!-- This is the main love letter icon that remains visible -->
+            <div class="tooltip">   <!-- The tooltip appears when hovering over the love letter container -->
+                <span class="tooltip-text">{@html tooltip_text}</span>  <!-- The right side contains the textual message -->
+            </div>
+        </div>
+    </div>
+
+    <div class="banner-center"> <!-- Center section contains an interactive video element -->
+        <video
+            disablepictureinpicture
+            bind:this={video_element}
+            src="/banner/name_banner.mp4"
+            poster="/banner/name_banner.png"
+            on:mouseover={playVideo}
+            on:focus={playVideo}
+            on:mouseout={pauseVideo}
+            on:blur={pauseVideo}
+            on:click={navigateToHome}
+            muted
+            loop
+            tabindex="0"
+        >
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="banner-right">  <!-- Right section contains navigation links to different pages -->
+        <a class="nav-item" href="/">Home</a>
+        <a class="nav-item" href="/about-me">About Me</a>
+        <a class="nav-item" href="/projects">Projects</a>
+        <a class="nav-item" href="/photo-gallery">Photo Gallery</a>
+    </div>
+</div>
