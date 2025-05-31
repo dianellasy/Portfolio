@@ -188,7 +188,7 @@
         /* Overall two-column layout */
         display: flex;  /* Lays out children side by side */
         align-items: flex-start;    /* Aligns items to the top, so the image position can be tweaked */
-        gap: 2rem;  /* Horizontal gap between columns */
+        gap: 3rem;  /* Horizontal gap between columns */
         padding: 2rem;
     }
 
@@ -198,6 +198,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;    /* Center them horizontally */
+        margin-left: 20px;  /* Shift content to the right */
     }
 
     .top-container .left-side-image {
@@ -216,7 +217,7 @@
 
     .bottom-text-underneath-picture-in-white {
         /* Text block with white color */
-        margin-top: 1rem;   /* Provides breathing room above the buttom text */
+        margin-top: -1.4rem;   /* Provides breathing room above the buttom text */
         font-family: 'Open Sans', sans-serif;
         font-size: 20px;    /* Set the font size to 20 pixels */
         text-align: center; /* Center aligns the text within this container */
@@ -227,7 +228,7 @@
         /* Container for all social icons */
         display: inline-flex;  /* Inline flex so it does not take the full width */
         gap: 20px;  /* Space between the icons */
-        margin-top: .5rem;   /* Space between the text and the icons */
+        margin-top: 0.9rem;   /* Space between the text and the icons */
     }
 
     .social-icons a {
