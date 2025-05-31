@@ -280,6 +280,7 @@
         -webkit-text-fill-color: transparent;   /* Make text fill transparent to reveal the gradient */
         background-clip: text;  /* Standard text clipping */
         color: transparent; /* Transparent text color so that the gradient shows */
+        font-family: 'Open Sans', sans-serif;
     }
 
     .container {
@@ -328,7 +329,7 @@
         background-size: 200% 200%; /* Create a large background for animation */
         z-index: -2;    /* Place the gradient behind the card */
         filter: blur(8px);  /* Blur the gradient to simulate a glow */
-        animation: borderAnim 6s linear infinite;    /* Animate the gradient for movement */
+        animation: borderAnim 5s linear infinite;    /* Animate the gradient for movement */
         border-radius: inherit; /* Inherit the border radius from the .card */
     }
 
@@ -369,6 +370,7 @@
         text-align: center; /* Center the project name */
         margin: 0.5rem 0 1rem 0; /* Consistent margins (top 0.5rem, bottom: 1rem, left/right: 0) */
         line-height: 1.2;   /* A slighly tighter line-height for short titles */
+        font-family: 'Open Sans', sans-serif;
     }
 
     .project-image {
@@ -390,11 +392,13 @@
 
     .badge {
         /* Styles for individual badges */
-        background: linear-gradient(70deg, #8B516A, #BA8E23); /* Dark grey background */
+        /*background: linear-gradient(20deg, #efb7ce, #BA8E23); */
+        background: linear-gradient(30deg,#BA8E23, hotpink);
         color: #fff;    /* White text */
         font-size: 0.8rem;  /* Smaller font size for badges */
         padding: 0.3rem 0.6rem; /* Padding to create the rectangle shape */
         border-radius: 4px; /* Slightly rounded corners */
+        font-family: 'Open Sans', sans-serif;
     }
 
     .project-text {
