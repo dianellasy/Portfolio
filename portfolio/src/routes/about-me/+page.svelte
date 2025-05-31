@@ -185,28 +185,29 @@
     }
 
     .wrapper {
-        /* Wrapper for the entire page content */
-        padding: 20px;
+        /* Overall two-column layout */
+        display: flex;  /* Lays out children side by side */
+        align-items: flex-start;    /* Aligns items to the top, so the image position can be tweaked */
+        gap: 2rem;  /* Horizontal gap between columns */
+        padding: 2rem;
     }
 
     .top-container {
-        /* Top container holds the image and the adjacent content in a flex row */
-        display: flex;  /* Lays out children side by side */
-        align-items: flex-start;    /* Aligns items to the top, so the image position can be tweaked */
+        /* Left column stacks image -> text -> icons */
+        width: 400px;   /* Fixed width of 400px so it does not take up the entire screen */
+        display: flex;
+        flex-direction: column;
+        align-items: center;    /* Center them horizontally */
     }
 
-    .left-side-image {
-        /* Image that will appear on the left side */
-        width: 380px;   /* Set a fixed width of 380px */
-        margin-left: 240px;  /* Shifts the image a little to the right */
+    .top-container .left-side-image {
+        width: 380px;
         margin-top: 80px;  /* Moves the image up a bit */
-        margin-right: 190px; /* Space between the image and the text */
     }
 
     .bottom-text-underneath-picture-in-pink {
         /* Text block with pink color */
-        margin-top: 30px;   /* Provides breathing room above the buttom text */
-        margin-left: -950px;  /* Moves the entire bottom-text container -940px to the right */
+        margin-top: 1rem;   /* Provides breathing room above the buttom text */
         font-family: 'Open Sans', sans-serif;
         font-size: 30px;    /* Set the font size to 30 pixels */
         text-align: center; /* Center aligns the text within this container */
@@ -215,8 +216,7 @@
 
     .bottom-text-underneath-picture-in-white {
         /* Text block with white color */
-        margin-top: -20px;   /* Provides breathing room above the buttom text */
-        margin-left: -950px;  /* Moves the entire bottom-text container -940px to the right */
+        margin-top: 1rem;   /* Provides breathing room above the buttom text */
         font-family: 'Open Sans', sans-serif;
         font-size: 20px;    /* Set the font size to 20 pixels */
         text-align: center; /* Center aligns the text within this container */
@@ -226,17 +226,14 @@
     .social-icons {
         /* Container for all social icons */
         display: inline-flex;  /* Inline flex so it does not take the full width */
-        align-items: center;
         gap: 20px;  /* Space between the icons */
-        margin-top: 10px;   /* Space between the text and the icons */
+        margin-top: .5rem;   /* Space between the text and the icons */
     }
 
     .social-icons a {
         /* Common styling for icon links */
         display: inline-block;
-        cursor: pointer;
-        text-decoration: none;
-        transition: transform 0.3s ease;    /* Smooth transition for the lift effect */
+        transition: transform 0.3s, fill 0.3s;    /* Smooth transition for the lift effect */
     }
 
     .social-icons a:hover {
@@ -250,6 +247,11 @@
         height: 40px;
         fill: white;    /* Default fill is white for clarity on a black background */
         transition: fill 0.3s ease;
+    }
+
+    .right-column {
+        /* Right column holds text */
+        flex: 1;    /* Takes up remaining space */
     }
 
     .linkedin-icon:hover svg path {
@@ -270,7 +272,6 @@
 
     .content {
         /* Content container on the right side of the image */
-        flex: 1;    /* Takes up the remaining space */
         font-family: 'Open Sans', sans-serif;
         color: white;   /* Sets default text color to white */
     }
@@ -337,74 +338,18 @@
 
 
 <div class="wrapper">
-     <div class="top-container">
+    <div class="top-container">
         <!-- Top container holds the image on the left and the content on the right -->
         <img class="left-side-image" src="/about-me/left-side-image.jpg" alt="Left Side" />
-        <div class="content">
-            <h1>Hello World!</h1>
-            <p>
-                My name is <span class="pink-word">Dianella Sy</span>, and I am a third-year
-                undergraduate student majoring in <span class="pink-word">Computer Science </span>
-                at <span class="pink-word">California State University, Fullerton (CSUF)</span>.<br><br>
-
-                Before my dad retired, he was a Computer and Network Technician at the school district where 
-                I attended elementary school, so from a young age, I was exposed to computers. I was introduced 
-                to computer science in <span class="pink-word">fifth grade</span> and took coding lessons through 
-                <span class="pink-word">Code.org’s Minecraft Hour of Code Tutorials</span> and created my own 
-                <span class="pink-word">Flappy Bird Game</span>. Because of my long-term interest in computer 
-                science, in my junior year of high school, I took <span class="pink-word">AP Computer Science 
-                Principles</span>, an introductory college-level course, where I learned algorithms, programming, 
-                computer systems, networks, and data analysis. I was interested in learning more about computer 
-                science, so after taking the course and passing the AP exam, I chose to major in Computer Science 
-                at CSUF, where my older brother also attended college.<br><br>
-                
-                During my second year at CSUF, I was the <span class="pink-word">Treasurer</span> for
-                the chapter club, <span class="pink-word">Association for Computing Machinery-Women</span>, where I
-                managed all financial affairs and budgeting, as well as maintained the agency accounts for the organization.
-                I also encouraged and supported 15 women pursuing a computer science major and hosted 15+ technical 
-                workshops. In addition to being Treasurer, in the spring semester, I attended my first hackathon, 
-                <span class="pink-word">FullyHacks 2025</span>, where I won <span class="pink-word">Best Game Project</span>.<br><br> 
-
-                This summer, I am participating in the <span class="pink-word">2025 CIC Summer Research Program</span> at CSUF. During this seven-week 
-                research experience, I am exploring <span class="pink-word">Pairs Trading</span> by engaging in structured virtual lectures, 
-                working on a research project, collaborating with faculty and peers, and gaining valuable experience applying computer science 
-                concepts to real-world problems. In addition, I was also <span class="pink-word">1</span> out of the <span class="pink-word">50</span>, 
-                from an applicant pool of nearly <span class="pink-word">900</span>, selected to attend the <span class="pink-word">CSU AI Summer Camp 2025</span>
-                at Cal Poly San Luis Obispo, sponsored by <span class="pink-word">Amazon Web Services (AWS)</span>. I will be working with a team to solve pressing 
-                challenges and opportunities in the CSU system, applying AI technologies through hands-on workshops and mentored projects, and pitching my team’s 
-                ideas and prototypes to my peers and mentors in a 5-day <span class="pink-word">applied AI hackathon</span>.<br><br>
-
-                For the upcoming year as a third-year student, I will be a <span class="pink-word">Computer Science Supplemental Instruction Leader</span>, where I 
-                facilitate two group sessions weekly where students meet to improve their understanding of the course materials in a computer science class. I will
-                also be the <span class="pink-word">Webmaster</span> and <span class="pink-word">Open Source Co-Team Lead</span> for the CSUF chapter club, 
-                <span class="pink-word">Association for Computing Machinery</span>. As Webmaster, I will maintain the Association for Computing Machinery CSUF’s website, 
-                <span class="pink-word">acmcsuf.com</span>, the largest open-source project for the chapter club, and update it with new information. I will also guide 
-                students with issues listed on <span class="pink-word">GitHub</span> and mentor how to solve the issue, providing hands-on experience in contributing to 
-                open-source projects. As Open Source Co-Team Lead, I will present and organize weekly technical workshops for students, such as instructing them to make a 
-                first contribution to the acmcsufoss organization, hands-on coding, and real-world open source projects.<br><br>
-
-                After I graduate, I plan to pursue a <span class="pink-word">master's degree</span> and a <span class="pink-word">PhD</span> while working as a software engineer. 
-                I am excited and looking forward to following in my dad's footsteps, applying all of the topics I learned in fifth grade through Code.org, AP Computer Science Principles, 
-                and my college courses to the real world, expanding my technical skills, and gaining hands-on experience.
-            </p>
-        </div>
-     </div>
-
-
-    <div class="bottom-text-underneath-picture-in-pink">
-        <!-- Holds the pink text that appears below the top container -->
-        <p>
+        <p class="bottom-text-underneath-picture-in-pink">
             <strong>Dianella Sy<br>
             (she/her)</strong>
         </p>
-    </div>
 
-    <div class="bottom-text-underneath-picture-in-white">
-        <!-- Holds the white text that appears below the top container -->
-        <p>
+        <p class="bottom-text-underneath-picture-in-white">
             Aspiring Software Developer
         </p>
-        
+
         <div class="social-icons">
             <!-- LinkedIn icon underneath the white text -->
             <a
@@ -483,6 +428,57 @@
                         .1 17zM256 0v128h128L256 0z"/>
                 </svg>
             </a>
+        </div>
+    </div>
+
+    <div class="right-column">
+        <div class="content">
+            <h1>Hello World!</h1>
+            <p>
+                My name is <span class="pink-word">Dianella Sy</span>, and I am a third-year
+                undergraduate student majoring in <span class="pink-word">Computer Science </span>
+                at <span class="pink-word">California State University, Fullerton (CSUF)</span>.<br><br>
+
+                Before my dad retired, he was a Computer and Network Technician at the school district where 
+                I attended elementary school, so from a young age, I was exposed to computers. I was introduced 
+                to computer science in <span class="pink-word">fifth grade</span> and took coding lessons through 
+                <span class="pink-word">Code.org’s Minecraft Hour of Code Tutorials</span> and created my own 
+                <span class="pink-word">Flappy Bird Game</span>. Because of my long-term interest in computer 
+                science, in my junior year of high school, I took <span class="pink-word">AP Computer Science 
+                Principles</span>, an introductory college-level course, where I learned algorithms, programming, 
+                computer systems, networks, and data analysis. I was interested in learning more about computer 
+                science, so after taking the course and passing the AP exam, I chose to major in Computer Science 
+                at CSUF, where my older brother also attended college.<br><br>
+                
+                During my second year at CSUF, I was the <span class="pink-word">Treasurer</span> for
+                the chapter club, <span class="pink-word">Association for Computing Machinery-Women</span>, where I
+                managed all financial affairs and budgeting, as well as maintained the agency accounts for the organization.
+                I also encouraged and supported 15 women pursuing a computer science major and hosted 15+ technical 
+                workshops. In addition to being Treasurer, in the spring semester, I attended my first hackathon, 
+                <span class="pink-word">FullyHacks 2025</span>, where I won <span class="pink-word">Best Game Project</span>.<br><br> 
+
+                This summer, I am participating in the <span class="pink-word">2025 CIC Summer Research Program</span> at CSUF. During this seven-week 
+                research experience, I am exploring <span class="pink-word">Pairs Trading</span> by engaging in structured virtual lectures, 
+                working on a research project, collaborating with faculty and peers, and gaining valuable experience applying computer science 
+                concepts to real-world problems. In addition, I was also <span class="pink-word">1</span> out of the <span class="pink-word">50</span>, 
+                from an applicant pool of nearly <span class="pink-word">900</span>, selected to attend the <span class="pink-word">CSU AI Summer Camp 2025</span>
+                at Cal Poly San Luis Obispo, sponsored by <span class="pink-word">Amazon Web Services (AWS)</span>. I will be working with a team to solve pressing 
+                challenges and opportunities in the CSU system, applying AI technologies through hands-on workshops and mentored projects, and pitching my team’s 
+                ideas and prototypes to my peers and mentors in a 5-day <span class="pink-word">applied AI hackathon</span>.<br><br>
+
+                For the upcoming year as a third-year student, I will be a <span class="pink-word">Computer Science Supplemental Instruction Leader</span>, where I 
+                facilitate two group sessions weekly where students meet to improve their understanding of the course materials in a computer science class. I will
+                also be the <span class="pink-word">Webmaster</span> and <span class="pink-word">Open Source Co-Team Lead</span> for the CSUF chapter club, 
+                <span class="pink-word">Association for Computing Machinery</span>. As Webmaster, I will maintain the Association for Computing Machinery CSUF’s website, 
+                <span class="pink-word">acmcsuf.com</span>, the largest open-source project for the chapter club, and update it with new information. I will also guide 
+                students with issues listed on <span class="pink-word">GitHub</span> and mentor how to solve the issue, providing hands-on experience in contributing to 
+                open-source projects. As Open Source Co-Team Lead, I will present and organize weekly technical workshops for students, such as instructing them to make a 
+                first contribution to the acmcsufoss organization, hands-on coding, and real-world open source projects.<br><br>
+
+                After I graduate, I plan to pursue a <span class="pink-word">master's degree</span> and a <span class="pink-word">PhD</span> while working as a software engineer. 
+                I am excited and looking forward to following in my dad's footsteps, applying all of the topics I learned in fifth grade through Code.org, AP Computer Science Principles, 
+                and my college courses to the real world, expanding my technical skills, and gaining hands-on experience.
+            </p>
         </div>
     </div>
 </div>
