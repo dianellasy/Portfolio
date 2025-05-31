@@ -3,8 +3,16 @@
 
     let video_element: HTMLVideoElement | null = null;  // Declare a variable named video_element with an explicit type; the element is HTMLVideoElement or null when not yet bound
     
-    let is_message_first = true;    // Declare a boolean flag to track which message should be shown
-    let tooltip_text = 'One quote I live by is, "If you chase your dreams, you can catch them" - Tadej Pogačar 👩🏻‍💻📝🎧❤️‍🔥'; // Set the initial tooltip text
+    const messages = [
+        "Thank you for visiting my portfolio! ❤️, Dianella Sy",
+        'One quote I live by is, "If you chase your dreams, you can catch them" - Tadej Pogačar 👩🏻‍💻📝🎧❤️‍🔥',
+        `Two of my favorite songs are "You Oughta Know" by Alanis Morisette and "Sweet Talkin' Woman" by ELO 🎸🎤🎶`,
+        "I love their songs so much that I attended both of their concerts at the Kia Forum in 2024! For Alanis' concert, I was selected to receive the physical copy of the setlist 🥹📄",
+        "My favorite hobbies include walking and riding my road bike on a trail, watching true crime shows, and spending time with my family and friends 🚵🏻‍♀️📺🫂"
+    ];
+
+    let tooltip_text = messages[0]; // Initialize the tooltip content with the first message
+    let message_index = 0;  // A counter to track which message to show next
 
     function playVideo() {  // Function to start the video when the mouse hovers over it
         if (video_element) video_element.play() // Check that the video element exists before calling its play() method
@@ -22,11 +30,9 @@
         goto('/');  // Use the goto function to navigate to the root path
     }
 
-    function updateTooltip() {  // Function inverts the flag and sets the tooltip text accordingly
-        is_message_first = !is_message_first;   // Toggle the boolean flag
-        tooltip_text = is_message_first // Set tooltip text based on the flag
-            ? 'One quote I live by is, "If you chase your dreams, you can catch them" - Tadej Pogačar 👩🏻‍💻📝🎧❤️‍🔥'
-            : "Thank you for visiting my portfolio! ❤️, Dianella Sy"
+    function updateTooltip() {  // Function sets the tooltip text to the message at the current index, then increments the index so that the next time the pointer enters, the next message in order is shown
+        tooltip_text = messages[message_index]; // Set the tooltip text using the current index
+        message_index = (message_index + 1) % messages.length;  // Increment the index and wrap around to 0 when reaching the end
     }
 </script>
 
@@ -88,6 +94,7 @@
         /* Styling for the love letter icon in the left section */
         font-size: 1.5rem;  /* Increase the love letter icon's size for better visibility */
         cursor: default;    /* Use the default cursor since the element is not clickable */
+        font-family: 'Open Sans', sans-serif;
     }
 
     .tooltip {
@@ -305,7 +312,7 @@
         <div class="love-letter-container" on:mouseenter={updateTooltip} role="button" tabindex="0"> <!-- The love letter container wraps both the love letter and tooltip -->
             <span class="love-letter">💌</span> <!-- This is the main love letter icon that remains visible -->
             <div class="tooltip">   <!-- The tooltip appears when hovering over the love letter container -->
-                <span class="tooltip-text">{tooltip_text}</span>  <!-- The right side contains the textual message -->
+                <span class="tooltip-text">{@html tooltip_text}</span>  <!-- The right side contains the textual message -->
             </div>
         </div>
     </div>
