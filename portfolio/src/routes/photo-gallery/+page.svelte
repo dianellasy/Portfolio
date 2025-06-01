@@ -34,7 +34,55 @@
         tooltip_text = messages[message_index]; // Set the tooltip text using the current index
         message_index = (message_index + 1) % messages.length;  // Increment the index and wrap around to 0 when reaching the end
     }
+
+    // Define an array of photo objects for the gallery
+    // Each object contains data for one photo - source path, date, description, and optional stickers
+    let photos = [
+        {
+            id: 1,  // Unique identifier for the photo
+            src: '/photo-gallery/google_office_field_trip.jpg', // Source path for the first image
+            date: 'December 1, 2023',   // Date to display below the image
+            description: 'Google Office Field Trip @ Irvine, California',  // Short description of the image
+            leftSticker: '',    // Sticker that will appear on the top-left of the photo
+            rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
+        },
+
+        {
+            id: 2,  // Unique identifier for the photo
+            src: '/photo-gallery/last_day_with_piyush.jpg', // Source path for the first image
+            date: 'December 7, 2023',   // Date to display below the image
+            description: 'Last Office Hours with Piyush, a Senior Software Engineer at Google', // Short description of the image
+            leftSticker: '',    // Sticker that will appear on the top-left of the photo
+            rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
+        },
+
+        {
+            id: 3,  // Unique identifier for the photo
+            src: '/photo-gallery/summer_night_with_lea_and_celine.jpg', // Source path for the first image
+            date: 'August 23, 2024',   // Date to display below the image
+            description: 'Touring my High School Friends, Lea and Celine, CSUF',  // Short description of the image
+            leftSticker: '',    // Sticker that will appear on the top-left of the photo
+            rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
+        },
+
+        {
+            id: 4,  // Unique identifier for the photo
+            src: '/photo-gallery/first_acmw_meeting.jpg', // Source path for the first image
+            date: 'September 25, 2024',   // Date to display below the image
+            description: 'First ACM-W Meeting',  // Short description of the image
+            leftSticker: '',    // Sticker that will appear on the top-left of the photo
+            rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
+        }
+    ]
 </script>
+
+
+<svelte:head>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+        rel="stylesheet"
+    />
+</svelte:head>
 
 
 <style>
@@ -183,6 +231,63 @@
             gap: 1rem;
         }
     }
+
+    .gallery {
+        margin-top: 80px;   /* Push gallery 80px down to avoid the banner */
+        display: grid;  /* Use CSS Grid for layout */
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));    /* Responsive grid columns */
+        gap: 1.5rem;    /* Space between photo cards */
+        padding: 1rem;  /* Padding around the gallery */
+    }
+
+    .photo-card {
+        background: #222;   /* Dark background for contrast */
+        border-radius: 8px; /* Rounded corners for a sleek look */
+        overflow: hidden;   /* Hide any overflow content */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);   /* Add a subtle shadow for depth */
+    }
+
+    .photo-wrapper {
+        position: relative; /* Relative position sets the context for absolute children */
+    }
+
+    img {
+        width: 100%;    /* Make image fill the width of its container */
+        display: block; /* Remove inline spacing below the image */
+    }
+
+    .sticker {
+        position: absolute; /* Absolutely position the sticker on the image */
+        font-size: 2rem;    /* Large font size for visibility */
+    }
+
+    .sticker.left {
+        top: 8px;   /* 8px distance from the top edge */
+        left: 8px;  /* 8px distance from the left edge */
+    }
+
+    .sticker.right {
+        bottom: 8px;    /* 8px distance from the bottom edge */
+        right: 8px; /* 8px distance from the right edge */
+    }
+
+    .photo-info {
+        text-align: center; /* Center-align text within the container */
+        padding: 1rem;  /* Padding around the text for spacing */
+    }
+
+    .date {
+        color: pink;    /* Pink color for the date text */
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;  /* Bold font for emphasis */
+        margin: 0.5rem 0;   /* Vertical margin around the date */
+    }
+
+    .description {
+        color: white;   /* White color for the description text */
+        font-family: 'Open Sans', sans-serif;
+        margin: 0;  /* Remove default margins for a clean layout */
+    }
 </style>
 
 
@@ -221,4 +326,27 @@
         <a class="nav-item" href="/projects">Projects</a>
         <a class="nav-item" href="/photo-gallery">Photo Gallery</a>
     </div>
+</div>
+
+
+<div class="gallery">   <!-- Gallery container with a top margin of 80px to avoid overlap with the fixed banner -->
+    {#each photos as photo} <!-- Loop through each photo in the photos array -->
+        <div class="photo-card">    <!-- Photo card container for each image and its information -->
+            <div class="photo-wrapper"> <!-- Wrapper for the photo used to enable absolute positioning for stickers -->
+                <img src={photo.src} alt="College" />   <!-- Display the image using its source from the photo object -->
+                {#if photo.leftSticker} <!-- If a left sticker is defined -->
+                    <span class="sticker left">{photo.leftSticker}</span>   <!-- Display it in the top-left corner-->
+                {/if}
+
+                {#if photo.rightSticker}    <!-- If a right sticker is defined -->
+                    <span class="sticker right">{photo.rightSticker}</span> <!-- Display it in the bottom-right corner -->
+                {/if}
+            </div>
+
+            <div class="photo-info">    <!-- Container for the photo's date and description -->
+                <p class="date">{photo.date}</p>    <!-- Display the date in pink text -->
+                <p class="description">{photo.description}</p>  <!-- Display the description in white text -->
+            </div>
+        </div>
+    {/each}
 </div>
