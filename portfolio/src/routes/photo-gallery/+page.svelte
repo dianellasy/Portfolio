@@ -1,5 +1,6 @@
 <script lang="ts">
     import { goto } from '$app/navigation'; // Import the SvelteKit navigation function to programatically route the user
+    import { onMount } from 'svelte';   // Import onMount, which runs after the component is inserted into the DOM
 
     let video_element: HTMLVideoElement | null = null;  // Declare a variable named video_element with an explicit type; the element is HTMLVideoElement or null when not yet bound
     
@@ -7,7 +8,6 @@
         "Thank you for visiting my portfolio! ❤️, Dianella Sy",
         'One quote I live by is, "If you chase your dreams, you can catch them" - Tadej Pogačar 👩🏻‍💻📝🎧❤️‍🔥',
         `Two of my favorite songs are "You Oughta Know" by Alanis Morisette and "Sweet Talkin' Woman" by ELO 🎸🎤🎶`,
-        "I love their songs so much that I attended both of their concerts at the Kia Forum in 2024! 🥰",
         "My favorite hobbies include walking and riding my road bike on a trail, watching true crime shows, and spending time with my family and friends 🚵🏻‍♀️📺🫂"
     ];
 
@@ -155,6 +155,15 @@
             rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
         }
     ];
+
+
+    let show_flash = true;  // Set up a Boolean to control the flash overlay visibility
+
+    onMount(() => { // When the component mounts, schedule the flash overlay to disappear
+        setTimeout(() => {
+            show_flash = false; // After 500 milliseconds, set show_flash to false
+        }, 700);    // 700ms provides a quick flash effect
+    });
 </script>
 
 
@@ -167,6 +176,43 @@
 
 
 <style>
+    .flash {
+        /* Flash overlay styling */
+        position: fixed;    /* Remains fixed relative to the viewport */
+        top: 0; /* Start at the top */
+        left: 0;    /* Start at the left */
+        width: 100vw;   /* Full viewport width */
+        height: 100vh;  /* Full viewport height */
+        background: white;  /* White color for the flash */
+        z-index: 9999;  /* Above other elements */
+        pointer-events: none;   /* Do not block any clicks */
+        animation: flashEffect 700ms ease-in-out forwards; /* Run flash animation */
+    }
+
+    @keyframes flashEffect {  /* Keyframes for a "double-flash" effect */
+        0% {
+            opacity: 0;
+        }
+        5% {
+            opacity: 1;
+        }
+        10% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 0;
+        }
+        55% {
+            opacity: 1;
+        }
+        60% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
     .banner {
         /* Style for the banner container */
         position: fixed;    /* Fix the banner's position relative to the viewport so it does not scroll */
@@ -377,6 +423,10 @@
     }
 </style>
 
+
+{#if show_flash}    <!-- When show_flash is true -->
+    <div class="flash"></div>   <!-- Div covers the entire page with a white background that animates, simulating a camera flash effect -->
+{/if}
 
 <div class="banner">    <!-- Main banner container that will always stay at the top of the viewport -->
     <div class="banner-left">   <!-- Left section contains a love letter icon with a tooltip using the title attribute -->
