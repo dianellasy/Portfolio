@@ -69,7 +69,7 @@
             id: 4,  // Unique identifier for the photo
             src: '/photo-gallery/first_acmw_meeting.jpg', // Source path for the image
             date: 'September 25, 2024',   // Date to display below the image
-            description: 'First Association for Computing Machinery - Women (ACM-W) Meeting',  // Short description of the image
+            description: 'First Association for Computing Machinery-Women (ACM-W) Meeting',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
             rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
         },
@@ -141,7 +141,7 @@
             id: 12,  // Unique identifier for the photo
             src: '/photo-gallery/whos_that_tuffy_keychain_blind_box.jpg', // Source path for the image
             date: 'May 8, 2025',   // Date to display below the image
-            description: 'Redeemed a Keychain Blind Box where my Friends Received Different Keychains of our School Mascot: Scholar Tuffy, Sanrio-Inspired Tuffy, Sporty Tuffy',  // Short description of the image
+            description: 'Redeemed Different Keychains of our School Mascot: Scholar Tuffy, Sanrio-Inspired Tuffy, Sporty Tuffy',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
             rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
         },
@@ -150,7 +150,7 @@
             id: 13,  // Unique identifier for the photo
             src: '/photo-gallery/senpais_and_team_leads.jpg', // Source path for the image
             date: 'May 8, 2025',   // Date to display below the image
-            description: 'Former Team Leads (Middle) and New (Outer) Team Leads for ACM CSUF Open Source Team',  // Short description of the image
+            description: 'Former Team Leads and New Team Leads for ACM CSUF Open Source Team',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
             rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
         }
@@ -326,6 +326,12 @@
         border-radius: 8px; /* Rounded corners for a sleek look */
         overflow: hidden;   /* Hide any overflow content */
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);   /* Add a subtle shadow for depth */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Smooth transition for hover effect */
+    }
+
+    .photo-card:hover { /* Hover effect for the photo card */
+        transform: translateY(-10px);   /* Move the card up by 10px */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);  /* Enhance shadow for depth effect */
     }
 
     .photo-wrapper {
