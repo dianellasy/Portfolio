@@ -40,7 +40,7 @@
     let photos = [
         {
             id: 1,  // Unique identifier for the photo
-            src: '/photo-gallery/google_office_field_trip.jpg', // Source path for the first image
+            src: '/photo-gallery/google_office_field_trip.jpg', // Source path for the image
             date: 'December 1, 2023',   // Date to display below the image
             description: 'Google Office Field Trip @ Irvine, California',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
@@ -49,7 +49,7 @@
 
         {
             id: 2,  // Unique identifier for the photo
-            src: '/photo-gallery/last_day_with_piyush.jpg', // Source path for the first image
+            src: '/photo-gallery/last_day_with_piyush.jpg', // Source path for the image
             date: 'December 7, 2023',   // Date to display below the image
             description: 'Last Office Hours with Piyush, a Senior Software Engineer at Google', // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
@@ -58,7 +58,7 @@
 
         {
             id: 3,  // Unique identifier for the photo
-            src: '/photo-gallery/summer_night_with_lea_and_celine.jpg', // Source path for the first image
+            src: '/photo-gallery/summer_night_with_lea_and_celine.jpg', // Source path for the image
             date: 'August 23, 2024',   // Date to display below the image
             description: 'Touring my High School Friends, Lea and Celine, CSUF',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
@@ -67,7 +67,7 @@
 
         {
             id: 4,  // Unique identifier for the photo
-            src: '/photo-gallery/first_acmw_meeting.jpg', // Source path for the first image
+            src: '/photo-gallery/first_acmw_meeting.jpg', // Source path for the image
             date: 'September 25, 2024',   // Date to display below the image
             description: 'First Association for Computing Machinery - Women (ACM-W) Meeting',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
@@ -76,7 +76,7 @@
 
         {
             id: 5,  // Unique identifier for the photo
-            src: '/photo-gallery/fall_open_source_commencement.jpg', // Source path for the first image
+            src: '/photo-gallery/fall_open_source_commencement.jpg', // Source path for the image
             date: 'December 5, 2024',   // Date to display below the image
             description: 'Fall Open Source Software Team Commencement',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
@@ -85,7 +85,7 @@
 
         {
             id: 6,  // Unique identifier for the photo
-            src: '/photo-gallery/discoverfest.jpg', // Source path for the first image
+            src: '/photo-gallery/discoverfest.jpg', // Source path for the image
             date: 'January 29, 2025',   // Date to display below the image
             description: 'Discover Fest',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
@@ -94,7 +94,7 @@
 
         {
             id: 7,  // Unique identifier for the photo
-            src: '/photo-gallery/selfie_after_intro_to_sveltekit_workshop.jpg', // Source path for the first image
+            src: '/photo-gallery/selfie_after_intro_to_sveltekit_workshop.jpg', // Source path for the image
             date: 'February 27, 2025',   // Date to display below the image
             description: 'Selfie After Intro to SvelteKit Workshop',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
@@ -103,9 +103,54 @@
 
         {
             id: 8,  // Unique identifier for the photo
-            src: '/photo-gallery/working_on_project_at_fullyhacks.png', // Source path for the first image
+            src: '/photo-gallery/working_on_project_at_fullyhacks.png', // Source path for the image
             date: 'April 12, 2025',   // Date to display below the image
-            description: 'Working on Out of this World Cafe @ FullyHacks 2025',  // Short description of the image
+            description: 'Working on our Video Game, Out of this World Cafe, @ FullyHacks 2025',  // Short description of the image
+            leftSticker: '',    // Sticker that will appear on the top-left of the photo
+            rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
+        },
+
+        {
+            id: 9,  // Unique identifier for the photo
+            src: '/photo-gallery/waiting_for_judging_at_fullyhacks.jpg', // Source path for the image
+            date: 'April 13, 2025',   // Date to display below the image
+            description: 'Waiting for Judging of our Video Game, Out of this World Cafe, @ FullyHacks 2025',  // Short description of the image
+            leftSticker: '',    // Sticker that will appear on the top-left of the photo
+            rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
+        },
+
+        {
+            id: 10,  // Unique identifier for the photo
+            src: '/photo-gallery/announcement_winning_best_game_project.png', // Source path for the image
+            date: 'April 13, 2025',   // Date to display below the image
+            description: 'Announcement that my Partner, Emily, and I Won Best Game Project',  // Short description of the image
+            leftSticker: '',    // Sticker that will appear on the top-left of the photo
+            rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
+        },
+
+        {
+            id: 11,  // Unique identifier for the photo
+            src: '/photo-gallery/spring_open_source_commencement.jpg', // Source path for the image
+            date: 'May 1, 2025',   // Date to display below the image
+            description: 'Spring Open Source Software Team Commencement',  // Short description of the image
+            leftSticker: '',    // Sticker that will appear on the top-left of the photo
+            rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
+        },
+
+        {
+            id: 12,  // Unique identifier for the photo
+            src: '/photo-gallery/whos_that_tuffy_keychain_blind_box.jpg', // Source path for the image
+            date: 'May 8, 2025',   // Date to display below the image
+            description: 'Redeemed a Keychain Blind Box where my Friends Received Different Keychains of our School Mascot: Scholar Tuffy, Sanrio-Inspired Tuffy, Sporty Tuffy',  // Short description of the image
+            leftSticker: '',    // Sticker that will appear on the top-left of the photo
+            rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
+        },
+
+        {
+            id: 13,  // Unique identifier for the photo
+            src: '/photo-gallery/senpais_and_team_leads.jpg', // Source path for the image
+            date: 'May 8, 2025',   // Date to display below the image
+            description: 'Former Team Leads (Middle) and New (Outer) Team Leads for ACM CSUF Open Source Team',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
             rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
         }
