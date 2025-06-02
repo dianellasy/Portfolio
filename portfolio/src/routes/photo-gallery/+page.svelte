@@ -69,11 +69,47 @@
             id: 4,  // Unique identifier for the photo
             src: '/photo-gallery/first_acmw_meeting.jpg', // Source path for the first image
             date: 'September 25, 2024',   // Date to display below the image
-            description: 'First ACM-W Meeting',  // Short description of the image
+            description: 'First Association for Computing Machinery - Women (ACM-W) Meeting',  // Short description of the image
+            leftSticker: '',    // Sticker that will appear on the top-left of the photo
+            rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
+        },
+
+        {
+            id: 5,  // Unique identifier for the photo
+            src: '/photo-gallery/fall_open_source_commencement.jpg', // Source path for the first image
+            date: 'December 5, 2024',   // Date to display below the image
+            description: 'Fall Open Source Software Team Commencement',  // Short description of the image
+            leftSticker: '',    // Sticker that will appear on the top-left of the photo
+            rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
+        },
+
+        {
+            id: 6,  // Unique identifier for the photo
+            src: '/photo-gallery/discoverfest.jpg', // Source path for the first image
+            date: 'January 29, 2025',   // Date to display below the image
+            description: 'Discover Fest',  // Short description of the image
+            leftSticker: '',    // Sticker that will appear on the top-left of the photo
+            rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
+        },
+
+        {
+            id: 7,  // Unique identifier for the photo
+            src: '/photo-gallery/selfie_after_intro_to_sveltekit_workshop.jpg', // Source path for the first image
+            date: 'February 27, 2025',   // Date to display below the image
+            description: 'Selfie After Intro to SvelteKit Workshop',  // Short description of the image
+            leftSticker: '',    // Sticker that will appear on the top-left of the photo
+            rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
+        },
+
+        {
+            id: 8,  // Unique identifier for the photo
+            src: '/photo-gallery/working_on_project_at_fullyhacks.png', // Source path for the first image
+            date: 'April 12, 2025',   // Date to display below the image
+            description: 'Working on Out of this World Cafe @ FullyHacks 2025',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
             rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
         }
-    ]
+    ];
 </script>
 
 
