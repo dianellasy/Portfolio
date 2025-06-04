@@ -1,6 +1,5 @@
 <script lang="ts">
     import { goto } from '$app/navigation'; // Import the SvelteKit navigation function to programatically route the user
-    import { onMount } from 'svelte';   // Import onMount, which runs after the component is inserted into the DOM
 
     let video_element: HTMLVideoElement | null = null;  // Declare a variable named video_element with an explicit type; the element is HTMLVideoElement or null when not yet bound
     

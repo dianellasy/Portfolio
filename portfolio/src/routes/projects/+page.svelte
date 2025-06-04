@@ -14,6 +14,7 @@
 
     let tooltip_text = messages[0]; // Initialize the tooltip content with the first message
     let message_index = 0;  // A counter to track which message to show next
+    let badge_count = messages.length;  // A badge count, initially the total number of messages
 
     function playVideo() {  // Function to start the video when the mouse hovers over it
         if (video_element) video_element.play() // Check that the video element exists before calling its play() method
@@ -34,6 +35,12 @@
     function updateTooltip() {  // Function sets the tooltip text to the message at the current index, then increments the index so that the next time the pointer enters, the next message in order is shown
         tooltip_text = messages[message_index]; // Set the tooltip text using the current index
         message_index = (message_index + 1) % messages.length;  // Increment the index and wrap around to 0 when reaching the end
+
+        if (badge_count > 0) {
+            badge_count = badge_count - 1;  // Decrement the badge count
+        } else {
+            badge_count = 0;    // Set to 0 if it reaches 0
+        }
     }
 
     // Project data for six cards
@@ -167,6 +174,24 @@
         font-size: 1.5rem;  /* Increase the love letter icon's size for better visibility */
         cursor: default;    /* Use the default cursor since the element is not clickable */
         font-family: 'Open Sans', sans-serif;
+    }
+
+    .love-letter-badge {
+        /* Styling for the badge in the top right of the love letter */
+        position: absolute; /* Position relative to the love letter container */
+        top: -5px;  /* Move badge slightly above the love letter */
+        right: -5px;    /* Move badge slightly to the right of the love letter */
+        background-color: #ff3d7f; /* Pink background color */
+        color: white;   /* White text color */
+        width: 20px;    /* Fixed width for the circle */
+        height: 20px;   /* Fixed height to make it a circle */
+        border-radius: 50%; /* Fully round shape */
+        display: flex;  /* Use flexbox for centering text */
+        align-items: center;    /* Vertically center text */
+        justify-content: center;    /* Horizontally center text */
+        font-size: 12px;    /* Set font size for badge text */
+        font-family: 'Open Sans', sans-serif;   /* Apply Open Sans font */
+        pointer-events: none;   /* Ignore pointer events to let hover work on the container */
     }
 
     .tooltip {
@@ -437,6 +462,7 @@
     <div class="banner-left">   <!-- Left section contains a love letter icon with a tooltip using the title attribute -->
         <div class="love-letter-container" on:mouseenter={updateTooltip} role="button" tabindex="0"> <!-- The love letter container wraps both the love letter and tooltip -->
             <span class="love-letter">💌</span> <!-- This is the main love letter icon that remains visible -->
+            <span class="love-letter-badge">{badge_count}</span>    <!-- Badge element positioned at the top-right of the love letter -->
             <div class="tooltip">   <!-- The tooltip appears when hovering over the love letter container -->
                 <span class="tooltip-text">{@html tooltip_text}</span>  <!-- The right side contains the textual message -->
             </div>
