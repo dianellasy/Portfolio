@@ -359,10 +359,17 @@
 
     .photo-wrapper {
         position: relative; /* Relative position sets the context for absolute children */
+        width: 100%;
+        aspect-ratio: 1/1;
+        overflow: hidden;   /* Hide any overflow of the image */
+        background: black;  /* A fallback background */
     }
 
     img {
         width: 100%;    /* Make image fill the width of its container */
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
         display: block; /* Remove inline spacing below the image */
     }
 
