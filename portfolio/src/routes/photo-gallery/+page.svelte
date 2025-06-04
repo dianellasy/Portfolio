@@ -5,8 +5,8 @@
     
     const messages = [
         "Thank you for visiting my portfolio! ❤️, Dianella Sy",
-        "Collect beautiful moments and let them tell the story of your life",
-        '"The most unforgettable memories of your college life will always happen inside the campus and outside the classroom" - Leo Joseph'
+        "Collect beautiful moments and let them tell the story of your life ⋆. 𐙚 ˚",
+        '"The most unforgettable memories of your college life will always happen inside the campus and outside the classroom" - Leo Joseph 🏫'
     ];
 
     let tooltip_text = messages[0]; // Initialize the tooltip content with the first message
