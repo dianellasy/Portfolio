@@ -5,9 +5,8 @@
     
     const messages = [
         "Thank you for visiting my portfolio! ❤️, Dianella Sy",
-        'One quote I live by is, "If you chase your dreams, you can catch them" - Tadej Pogačar 👩🏻‍💻📝🎧❤️‍🔥',
         `Two of my favorite songs are "You Oughta Know" by Alanis Morisette and "Sweet Talkin' Woman" by ELO 🎸🎤🎶`,
-        "My favorite hobbies include walking and riding my road bike on a trail, watching true crime shows, and spending time with my family and friends 🚵🏻‍♀️📺🫂"
+        "My favorite hobbies include watching true crime shows, walking and riding my road bike on a trail, and spending time with my family and friends 📺🚵🏻‍♀️🫂"
     ];
 
     let tooltip_text = messages[0]; // Initialize the tooltip content with the first message
