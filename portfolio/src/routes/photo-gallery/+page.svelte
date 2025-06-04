@@ -92,7 +92,7 @@
             id: 6,  // Unique identifier for the photo
             src: '/photo-gallery/discoverfest.jpg', // Source path for the image
             date: 'January 29, 2025',   // Date to display below the image
-            description: 'Discover Fest, Where the Board Members of ACM-W Volunteered to Inform CSUF Students about Our Club',  // Short description of the image
+            description: 'Discover Fest, Where the Board Members of ACM-W Informed CSUF Students about Our Club',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
             rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
         },
@@ -160,6 +160,20 @@
             rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
         }
     ];
+
+
+    let modal_open = false; // Flag indicating whether the modal is open
+    let selected_photo = null;  // Holds the photo object currently selected for display in the modal
+
+    function openModal(photo) { // Function to open the modal when a photo is clicked
+        selected_photo = photo; // Set the clicked photo as the selected photo
+        modal_open = true;  // Open the modal by setting the flag to true
+    }
+
+    function closeModal() { // Function to close the modal
+        modal_open = false; // Set modal flag to false to hide the modal
+        selected_photo = null;  // Clear the selected photo
+    }
 </script>
 
 
@@ -359,18 +373,25 @@
 
     .photo-wrapper {
         position: relative; /* Relative position sets the context for absolute children */
-        width: 100%;
-        aspect-ratio: 1/1;
+        width: 100%;    /* Full width container */
+        aspect-ratio: 1/1;  /* Maintain a consistent 1:1 square aspect ratio */
         overflow: hidden;   /* Hide any overflow of the image */
         background: black;  /* A fallback background */
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    img {
+    .photo-wrapper img {
         width: 100%;    /* Make image fill the width of its container */
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
+        height: 100%;   /* Image fills the container's height */
+        object-fit: cover;  /* Preserve aspect ratio while flling the container - cropping as necessary */
         display: block; /* Remove inline spacing below the image */
+        border-radius: 0;   /* Remove any rounding if necessary */
+        cursor: pointer;    /* Indicate the picture is clickable */
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     .sticker {
@@ -404,6 +425,63 @@
         color: white;   /* White color for the description text */
         font-family: 'Open Sans', sans-serif;
         margin: 0;  /* Remove default margins for a clean layout */
+    }
+
+    .modal-backdrop {
+        /* Modal backdrop styles */
+        position: fixed;    /* Fix the backdrop to cover the entire viewport */
+        top: 0; /* Start at the top */
+        left: 0;    /* Start at the left */
+        width: 100vw;   /* Cover full viewport width */
+        height: 100vh;  /* Cover full viewport height */
+        background: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+        display: flex;  /* Use flexbox for centering the modal */
+        justify-content: center;    /* Center horizontally */
+        align-items: center;    /* Center vertically */
+        z-index: 10000; /* High stacking order to appear above all content */
+    }
+
+    .modal {
+        /* Modal container styles */
+        position: relative; /* Relative positioning for inner elements (like the close button) */
+        max-width: 100vw; /* Ensure the modal does not exceed viewport width */
+        max-height: 100vh;    /* Ensure the modal does not exceed viewport height */
+        background: white;  /* White background for the modal */
+        overflow: hidden; /* No scrollbars - the image is scaled to fit */
+    }
+
+    .modal img {
+        /* Modal image styles */
+        max-width: 100vw;   /* The image width cannot exceed the viewport width */
+        max-height: 100vh;  /* The image height cannot exceed the viewport height */
+        object-fit: cover;    /* Ensure the entire image is visible, with letterboxing if necessary */
+        display: block; /* Remove inline spacing */
+        border-radius: 0; /* Ensure no rounded corners */
+    }
+
+    .close-button {
+        /* Close button styles */
+        position: absolute; /* Position the button relative to the modal */
+        top: 10px;  /* Place 10px from the top of the modal */
+        right: 10px;    /* Place 10px from the right side */
+        width: 40px;    /* Set a fixed width */
+        height: 40px;   /* Set a fixed height */
+        background-color: white;    /* White background by default */
+        color: black;   /* Black "X" for visibility */
+        border: 2px solid black;    /* Thin black border */
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.6rem;  /* Font size for the "X" */
+        font-weight: bold;  /* Make the "X" bold */
+        display: flex;  /* Use flexbox for centering */
+        justify-content: center;    /* Center the "X" horizontally */
+        align-items: center;    /* Center the "X" vertically */
+        cursor: pointer;    /* Change cursor to pointer to denote clickability */
+        transition: background-color 0.3s ease; /* Smooth hover transition */
+    }
+
+    .close-button:hover {
+        /* Change background color when hovered */
+        background-color: pink; /* Change background to pink on hover */
     }
 </style>
 
@@ -449,7 +527,7 @@
 
 <div class="gallery">   <!-- Gallery container with a top margin of 80px to avoid overlap with the fixed banner -->
     {#each photos as photo} <!-- Loop through each photo in the photos array -->
-        <div class="photo-card">    <!-- Photo card container for each image and its information -->
+        <button class="photo-card" on:click={() => openModal(photo)}>    <!-- Photo card container for each image and its information -->
             <div class="photo-wrapper"> <!-- Wrapper for the photo used to enable absolute positioning for stickers -->
                 <img src={photo.src} alt="College" />   <!-- Display the image using its source from the photo object -->
                 {#if photo.leftSticker} <!-- If a left sticker is defined -->
@@ -465,6 +543,15 @@
                 <p class="date">{photo.date}</p>    <!-- Display the date in pink text -->
                 <p class="description">{photo.description}</p>  <!-- Display the description in white text -->
             </div>
-        </div>
+        </button>
     {/each}
 </div>
+
+{#if modal_open}    <!-- Only shown when modal_open is true -->
+    <div class="modal-backdrop" on:click|self={closeModal}> <!-- The backdrop darkens the background; clicking on it closes the modal -->
+        <div class="modal">
+            <button class="close-button" on:click={closeModal}>X</button>   <!-- "X" button in the modal to close it -->
+            <img src={selected_photo.src} alt="Full" /> <!-- Display the full-size picture for the selected photo -->
+        </div>
+    </div>    
+{/if}
