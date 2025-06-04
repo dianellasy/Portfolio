@@ -508,7 +508,7 @@
                 first contribution to the acmcsufoss organization, hands-on coding, and real-world open source projects.<br><br>
 
                 After I graduate, I plan to pursue a <span class="pink-word">master's degree</span> and a <span class="pink-word">PhD</span> while working as a software engineer. 
-                I am excited and looking forward to following in my dad's footsteps, applying all of the topics I learned in fifth grade through Code.org, AP Computer Science Principles, 
+                I am excited and looking forward to working as the same field as my dad, applying all of the topics I learned in fifth grade through Code.org, AP Computer Science Principles, 
                 and my college courses to the real world, expanding my technical skills, and gaining hands-on experience.
             </p>
         </div>

@@ -65,7 +65,7 @@
             id: 3,  // Unique identifier for the photo
             src: '/photo-gallery/summer_night_with_lea_and_celine.jpg', // Source path for the image
             date: 'August 23, 2024',   // Date to display below the image
-            description: 'Touring my High School Friends, Lea and Celine, CSUF',  // Short description of the image
+            description: 'Touring my High School Friends CSUF',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
             rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
         },
@@ -92,7 +92,7 @@
             id: 6,  // Unique identifier for the photo
             src: '/photo-gallery/discoverfest.jpg', // Source path for the image
             date: 'January 29, 2025',   // Date to display below the image
-            description: 'Discover Fest',  // Short description of the image
+            description: 'Discover Fest, Where the Board Members of ACM-W Volunteered to Inform CSUF Students about Our Club',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
             rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
         },
@@ -101,7 +101,7 @@
             id: 7,  // Unique identifier for the photo
             src: '/photo-gallery/selfie_after_intro_to_sveltekit_workshop.jpg', // Source path for the image
             date: 'February 27, 2025',   // Date to display below the image
-            description: 'Selfie After Intro to SvelteKit Workshop',  // Short description of the image
+            description: 'Selfie After Attending the CSUF Chapter Club ACM Open Source Software Team Workshop of Intro to SvelteKit',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
             rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
         },
@@ -128,7 +128,7 @@
             id: 10,  // Unique identifier for the photo
             src: '/photo-gallery/announcement_winning_best_game_project.png', // Source path for the image
             date: 'April 13, 2025',   // Date to display below the image
-            description: 'Announcement that my Partner, Emily, and I Won Best Game Project',  // Short description of the image
+            description: 'Closing Ceremony of FullyHacks 2025 where it was Announced that my Partners and I Won Best Game Project',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
             rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
         },
@@ -155,7 +155,7 @@
             id: 13,  // Unique identifier for the photo
             src: '/photo-gallery/senpais_and_team_leads.jpg', // Source path for the image
             date: 'May 8, 2025',   // Date to display below the image
-            description: 'Former Team Leads and New Team Leads for ACM CSUF Open Source Team',  // Short description of the image
+            description: 'Former Team Leads and New Team Leads for ACM CSUF Open Source Software Team',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
             rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
         }
