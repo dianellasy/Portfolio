@@ -5,8 +5,8 @@
     
     const messages = [
         "Thank you for visiting my portfolio! ❤️, Dianella Sy",
-        "Collect beautiful moments and let them tell the story of your life ⋆. 𐙚 ˚",
-        '"The most unforgettable memories of your college life will always happen inside the campus and outside the classroom" - Leo Joseph 🏫'
+        "Collect beautiful moments and let them tell the story of your life 📸",
+        '"The most unforgettable memories of your college life will always happen inside the campus and outside the classroom" - Leo Joseph 😊'
     ];
 
     let tooltip_text = messages[0]; // Initialize the tooltip content with the first message
@@ -128,7 +128,7 @@
             id: 10,  // Unique identifier for the photo
             src: '/photo-gallery/announcement_winning_best_game_project.png', // Source path for the image
             date: 'April 13, 2025',   // Date to display below the image
-            description: 'Closing Ceremony of FullyHacks 2025 where it was Announced that my Partners and I Won Best Game Project',  // Short description of the image
+            description: 'Closing Ceremony of FullyHacks 2025 Where it was Announced that my Partners and I Won Best Game Project',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
             rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
         },
@@ -163,8 +163,7 @@
 
 
     let modal_open = false; // Flag indicating whether the modal is open
-    let selected_photo = null;  // Holds the photo object currently selected for display in the modal
-
+    let selected_photo: Photo | null = null;  // Tell TypeScript that selected_photo will either be a Photo or null when nothing is selected
     function openModal(photo) { // Function to open the modal when a photo is clicked
         selected_photo = photo; // Set the clicked photo as the selected photo
         modal_open = true;  // Open the modal by setting the flag to true
@@ -457,7 +456,7 @@
         object-fit: cover;    /* Ensure the entire image is visible, with letterboxing if necessary */
         display: block; /* Remove inline spacing */
         border-radius: 0; /* Ensure no rounded corners */
-    }
+    } 
 
     .close-button {
         /* Close button styles */
