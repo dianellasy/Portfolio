@@ -1,3 +1,8 @@
+<svelte:head>   <!-- The <svelte:head> block allows insertion of elements into the document head -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <!-- Meta tag to ensure proper responsive scaling on mobile devices -->
+</svelte:head>
+
+
 <style> 
     /* Style block for component-specific styling */
     .top-left {
@@ -7,9 +12,9 @@
         left: 0;    /* Align to the left edge */
     }
 
-    .top-left img {
+    .top-left video {
         /* Define styles for the flicker GIF inside the top-left container */
-        max-width: 466px;   /* Limit the image width to 466px */
+        max-width: 270px;   /* Limit the image width to 466px */
         width: 100%;    /* Make the image responsive by scaling to 100% of its container */
         height: auto;   /* Preserve the image's aspect ratio automatically */
     }
@@ -67,18 +72,61 @@
         right: 0;   /* Align to the right edge */
     }
 
-    .bottom-right img {
+    .bottom-right video {
         /* Define styles for the flicker GIF inside the bottom-right container */
-        max-width: 533px;   /* Limit the image width to 533px */
+        max-width: 270px;   /* Limit the image width to 533px */
         width: 100%;    /* Make the image responsive by scaling to 100% of its container */
         height: auto;   /* Preserve the image's aspect ratio automatically */
+    }
+
+    @media (max-width: 768px) {
+        /* Responsive adjustments for screens up to 768px wide */
+        .button-container {
+            transform: none;    /* Remove the left shift on smaller screens */
+            flex-direction: column; /* Stack buttons vertically instead of horizontally */
+            align-items: center;    /* Center buttons horizontally */
+            gap: 8px;   /* Decrease spacing between buttons */
+        }
+
+        button {
+            font-size: 14px;    /* Reduce font size to suit smaller screens */
+            padding: 8px 16px;  /* Adjust padding for better fit on small devices */
+        }
+
+        .top-left video,
+        .bottom-right video {
+            max-width: 100%;    /* Allow images to scale down fully on smaller screens */
+        }
+
+        .top-left, 
+        .bottom-right {
+            display: none;  /* Hides these elements on screens up to 768px */
+        }
+    }
+
+    @media (max-width: 480px) {
+        /* Further adjustments for very small screens up to 480px wide */
+        .top-left,
+        .bottom-right {
+            display: none;  /* Ensures these elements remain hidden on very small screens */
+        }
     }
 </style>
 
 
 <div class="top-left">
-     <!-- Container for the GIF, positioned using the .top-left class -->
-     <img src="/home/top_left_flicker.gif" alt="Top Left Flicker GIF" />
+    <video 
+        autoplay 
+        loop 
+        muted 
+        playsinline
+        disablepictureinpicture
+        controlslist="nopictureinpicture noremoteplayback"
+    >
+        <!-- Container for the video, positioned using the .top-left class -->
+        <source src="/home/top_left_flicker.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
 </div>
 
 
@@ -113,6 +161,17 @@
 
 
 <div class="bottom-right">
-    <!-- Container for the GIF, positioned using the .bottom-right class -->
-     <img src="/home/bottom_right_flicker.gif" alt="Bottom Right Flicker GIF" />
+    <!-- Container for the video, positioned using the .bottom-right class -->
+    <video 
+        autoplay 
+        loop 
+        muted 
+        playsinline
+        disablepictureinpicture
+        controlslist="nopictureinpicture noremoteplayback"
+    >
+        <!-- Container for the video, positioned using the .top-left class -->
+        <source src="/home/bottom_right_flicker.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
 </div>
