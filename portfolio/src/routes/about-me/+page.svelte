@@ -1,5 +1,20 @@
 <script lang="ts">
     import { goto } from '$app/navigation'; // Import the SvelteKit navigation function to programatically route the user
+    import { onMount } from 'svelte';   // Import the onMount function from Svelte to run code after the component has been rendered 
+
+    let width: number = 0;  // Declare a reactive variable width to store the current window width 
+
+    onMount(() => { // The onMount lifecycle runs once the component is attached to the DOM
+        width = window.innerWidth;  // Set the width to the current window width
+
+        const updateWidth = () => { // A function to update the width variable whenever the window is resized
+            width = window.innerWidth;  // Update the reactive variable width with the new window width
+        };
+
+        window.addEventListener('resize', updateWidth); // Add the event listener for the window "resize" event
+        return () => window.removeEventListener('resize', updateWidth); // Return a cleanup function that removes the resize event listener when the component is unmounted
+    });
+
 
     let video_element: HTMLVideoElement | null = null;  // Declare a variable named video_element with an explicit type; the element is HTMLVideoElement or null when not yet bound
     
@@ -195,7 +210,7 @@
     @media screen and (max-width: 600px) {
         .banner {
             flex-direction: column;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem;
             height: auto;   /* Let height adjust */
             font-family: 'Open Sans', sans-serif;
         }
@@ -211,6 +226,61 @@
             justify-content: center;
             margin: 0;
             gap: 1rem;
+        }
+
+        .love-letter-container {
+            display: none;
+        }
+
+        .wrapper {
+            margin-top: 80px;   /* Prevent the fixed banner from overlapping the content */
+            flex-direction: column;
+            align-items: center;    /* Center all items horizontally */
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .top-container {
+            width: 100%;
+            margin-left: 0; /* Remove any left offset */
+            align-items: center;    /* Center its children */
+            text-align: center; /* Center any text inside */
+        }
+
+        .top-container .left-side-image {
+            width: 100%;
+            height: auto;   /* Maintain aspect ratio */
+            margin-right: 55px;
+        }
+
+        .bottom-text-underneath-picture-in-pink,
+        .bottom-text-underneath-picture-in-white {
+            width: 100%;
+            text-align: center;
+            margin-right: 55px;
+        }
+
+        .social-icons {
+            margin-right: 55px;
+        }
+
+        .right-column {
+            width: 100%;
+            text-align: center;
+        }
+
+        .content h1 {
+            font-size: 28px;   /* Slightly reduced font size for mobile */
+            margin-top: 20px;   /* Spacing from the above elements */
+            text-align: center; /* Center the heading */
+            margin-left: 54px;
+        }
+
+        .content p {
+            font-size: 16px;    /* Smaller paragraph text */
+            text-align: center; /* Center the paragraph text */
+            max-width: 100%;
+            padding-left: 50px;
         }
     }
 
