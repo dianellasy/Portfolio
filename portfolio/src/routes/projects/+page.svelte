@@ -120,6 +120,8 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
         rel="stylesheet"
     />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </svelte:head>
 
 
@@ -263,29 +265,6 @@
     .banner-center video:hover,
     .banner-center video:focus {
         transform: scale(1.05); /* On hover, scale the video element slightly to create a zoom effect */
-    }
-
-    /* Responsive tweaks for smaller screens */
-    @media screen and (max-width: 600px) {
-        .banner {
-            flex-direction: column;
-            padding: 0.5rem 1rem;
-            height: auto;   /* Let height adjust */
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        .banner-center {
-            position: relative;
-            left: 0;
-            transform: none;
-            margin: 0.5rem 0;
-        }
-
-        .banner-right {
-            justify-content: center;
-            margin: 0;
-            gap: 1rem;
-        }
     }
 
     .title-container {
@@ -454,6 +433,43 @@
     .project-icons a:hover {
         /* Hover effect for the icon links */
         color: #efb7ce; /* Change icon color to light pink when hovered */
+    }
+
+    /* Responsive tweaks for smaller screens */
+    @media screen and (max-width: 600px) {
+        .banner {
+            flex-direction: column;
+            padding: 0.5rem 1rem;
+            height: auto;   /* Let height adjust */
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .banner-center {
+            position: relative;
+            left: 0;
+            transform: none;
+            margin: 0.5rem 0;
+        }
+
+        .banner-right {
+            justify-content: center;
+            margin: 0;
+            gap: 1rem;
+        }
+
+        .love-letter-container {
+            display: none;
+        }
+
+        .container {
+            margin-top: 80px;
+            grid-template-columns: 1fr; /* Single column layout for small screens */
+        }
+
+        .badge {
+            font-size: 0.7rem;  /* Reduce font size on mobile */
+            padding: 0.2rem 0.4rem; /* Reduce padding on mobile */
+        }
     }
 </style>
 

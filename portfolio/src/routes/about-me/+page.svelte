@@ -264,23 +264,12 @@
             margin-right: 55px;
         }
 
-        .right-column {
+        .right-column,
+        .content h1,
+        .content p {
             width: 100%;
             text-align: center;
-        }
-
-        .content h1 {
-            font-size: 28px;   /* Slightly reduced font size for mobile */
-            margin-top: 20px;   /* Spacing from the above elements */
-            text-align: center; /* Center the heading */
-            margin-left: 54px;
-        }
-
-        .content p {
-            font-size: 16px;    /* Smaller paragraph text */
-            text-align: center; /* Center the paragraph text */
-            max-width: 100%;
-            padding-left: 50px;
+            margin-left: 20px;
         }
     }
 
