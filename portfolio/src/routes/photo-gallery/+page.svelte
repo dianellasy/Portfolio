@@ -83,7 +83,7 @@
             id: 5,  // Unique identifier for the photo
             src: '/photo-gallery/fall_open_source_commencement.jpg', // Source path for the image
             date: 'December 5, 2024',   // Date to display below the image
-            description: 'Fall Open Source Software Team Commencement',  // Short description of the image
+            description: 'Fall Association for Computing Machinery (ACM) CSUF Open Source Software Team Commencement',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
             rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
         },
@@ -101,7 +101,7 @@
             id: 7,  // Unique identifier for the photo
             src: '/photo-gallery/selfie_after_intro_to_sveltekit_workshop.jpg', // Source path for the image
             date: 'February 27, 2025',   // Date to display below the image
-            description: 'Selfie After Attending the CSUF Chapter Club ACM Open Source Software Team Workshop of Intro to SvelteKit',  // Short description of the image
+            description: 'Selfie After Attending the ACM CSUF Open Source Software Team Workshop of Intro to SvelteKit',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
             rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
         },
@@ -137,7 +137,7 @@
             id: 11,  // Unique identifier for the photo
             src: '/photo-gallery/spring_open_source_commencement.jpg', // Source path for the image
             date: 'May 1, 2025',   // Date to display below the image
-            description: 'Spring Open Source Software Team Commencement',  // Short description of the image
+            description: 'Spring ACM CSUF Open Source Software Team Commencement',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
             rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
         },
@@ -463,7 +463,6 @@
         background-color: pink; /* Change background to pink on hover */
     }
 
-
     /* Responsive tweaks for smaller screens */
     @media screen and (max-width: 600px) {
         .banner {
@@ -503,6 +502,16 @@
 
     @media only screen and (min-width: 600px) and (max-width: 992px) {
         .banner-center video {
+            display: none;
+        }
+
+        .love-letter-container {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width: 992px) and (max-width: 1280px) {
+        .love-letter-container {
             display: none;
         }
     }

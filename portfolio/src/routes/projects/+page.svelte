@@ -479,6 +479,16 @@
         .banner-center video {
             display: none;
         }
+
+        .love-letter-container {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width: 992px) and (max-width: 1280px) {
+        .love-letter-container {
+            display: none;
+        }
     }
 </style>
 
