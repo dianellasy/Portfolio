@@ -441,7 +441,7 @@
     @media screen and (max-width: 600px) {
         .banner {
             flex-direction: column;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem;
             height: auto;   /* Let height adjust */
             font-family: 'Open Sans', sans-serif;
         }
