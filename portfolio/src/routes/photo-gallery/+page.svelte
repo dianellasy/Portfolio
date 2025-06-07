@@ -463,6 +463,7 @@
         background-color: pink; /* Change background to pink on hover */
     }
 
+
     /* Responsive tweaks for smaller screens */
     @media screen and (max-width: 600px) {
         .banner {
@@ -497,6 +498,12 @@
 
         .photo-card {
             margin-top: 80px;
+        }
+    }
+
+    @media only screen and (min-width: 600px) and (max-width: 992px) {
+        .banner-center video {
+            display: none;
         }
     }
 </style>

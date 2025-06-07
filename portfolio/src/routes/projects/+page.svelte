@@ -459,18 +459,25 @@
             gap: 1rem;
         }
 
+
         .love-letter-container {
             display: none;
         }
 
         .container {
-            margin-top: 80px;
+            margin-top: 90px;
             grid-template-columns: 1fr; /* Single column layout for small screens */
         }
 
         .badge {
             font-size: 0.7rem;  /* Reduce font size on mobile */
             padding: 0.2rem 0.4rem; /* Reduce padding on mobile */
+        }
+    }
+
+    @media only screen and (min-width: 600px) and (max-width: 992px) {
+        .banner-center video {
+            display: none;
         }
     }
 </style>

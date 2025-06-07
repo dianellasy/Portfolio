@@ -206,73 +206,6 @@
         transform: scale(1.05); /* On hover, scale the video element slightly to create a zoom effect */
     }
 
-    /* Responsive tweaks for smaller screens */
-    @media screen and (max-width: 600px) {
-        .banner {
-            flex-direction: column;
-            padding: 0.5rem;
-            height: auto;   /* Let height adjust */
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        .banner-center {
-            position: relative;
-            left: 0;
-            transform: none;
-            margin: 0.5rem 0;
-        }
-
-        .banner-right {
-            justify-content: center;
-            margin: 0;
-            gap: 1rem;
-        }
-
-        .love-letter-container {
-            display: none;
-        }
-
-        .wrapper {
-            margin-top: 80px;   /* Prevent the fixed banner from overlapping the content */
-            flex-direction: column;
-            align-items: center;    /* Center all items horizontally */
-            gap: 1rem;
-            padding: 1rem;
-        }
-
-        .top-container {
-            width: 100%;
-            margin-left: 0; /* Remove any left offset */
-            align-items: center;    /* Center its children */
-            text-align: center; /* Center any text inside */
-        }
-
-        .top-container .left-side-image {
-            width: 100%;
-            height: auto;   /* Maintain aspect ratio */
-            margin-right: 55px;
-        }
-
-        .bottom-text-underneath-picture-in-pink,
-        .bottom-text-underneath-picture-in-white {
-            width: 100%;
-            text-align: center;
-            margin-right: 55px;
-        }
-
-        .social-icons {
-            margin-right: 55px;
-        }
-
-        .right-column,
-        .content h1,
-        .content p {
-            width: 100%;
-            text-align: center;
-            margin-left: 20px;
-        }
-    }
-
     .wrapper {
         /* Overall two-column layout */
         display: flex;  /* Lays out children side by side */
@@ -385,6 +318,79 @@
         /* Define a class for pink-colored text */
         color: #efb7ce;
         font-weight: bold;
+    }
+
+    /* Responsive tweaks for smaller screens */
+    @media screen and (max-width: 600px) {
+        .banner {
+            flex-direction: column;
+            padding: 0.5rem;
+            height: auto;   /* Let height adjust */
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .banner-center {
+            position: relative;
+            left: 0;
+            transform: none;
+            margin: 0.5rem 0;
+        }
+
+        .banner-right {
+            justify-content: center;
+            margin: 0;
+            gap: 1rem;
+        }
+
+        .love-letter-container {
+            display: none;
+        }
+
+        .wrapper {
+            margin-top: 80px;   /* Prevent the fixed banner from overlapping the content */
+            flex-direction: column;
+            align-items: center;    /* Center all items horizontally */
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .top-container {
+            width: 100%;
+            margin-left: 0; /* Remove any left offset */
+            align-items: center;    /* Center its children */
+            text-align: center; /* Center any text inside */
+        }
+
+        .top-container .left-side-image {
+            width: 100%;
+            height: auto;   /* Maintain aspect ratio */
+            margin-right: 55px;
+        }
+
+        .bottom-text-underneath-picture-in-pink,
+        .bottom-text-underneath-picture-in-white {
+            width: 100%;
+            text-align: center;
+            margin-right: 55px;
+        }
+
+        .social-icons {
+            margin-right: 55px;
+        }
+
+        .right-column,
+        .content h1,
+        .content p {
+            width: 100%;
+            text-align: center;
+            margin-left: 20px;
+        }
+    }
+
+    @media only screen and (min-width: 600px) and (max-width: 992px) {
+        .banner-center video {
+            display: none;
+        }
     }
 </style>
 
