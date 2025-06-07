@@ -326,29 +326,6 @@
         transform: scale(1.05); /* On hover, scale the video element slightly to create a zoom effect */
     }
 
-    /* Responsive tweaks for smaller screens */
-    @media screen and (max-width: 600px) {
-        .banner {
-            flex-direction: column;
-            padding: 0.5rem 1rem;
-            height: auto;   /* Let height adjust */
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        .banner-center {
-            position: relative;
-            left: 0;
-            transform: none;
-            margin: 0.5rem 0;
-        }
-
-        .banner-right {
-            justify-content: center;
-            margin: 0;
-            gap: 1rem;
-        }
-    }
-
     .gallery {
         margin-top: 80px;   /* Push gallery 80px down to avoid the banner */
         display: grid;  /* Use CSS Grid for layout */
@@ -363,6 +340,8 @@
         overflow: hidden;   /* Hide any overflow content */
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);   /* Add a subtle shadow for depth */
         transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Smooth transition for hover effect */
+        margin: 0;
+        padding: 0;
     }
 
     .photo-card:hover { /* Hover effect for the photo card */
@@ -424,6 +403,7 @@
         color: white;   /* White color for the description text */
         font-family: 'Open Sans', sans-serif;
         margin: 0;  /* Remove default margins for a clean layout */
+        padding: 0;
     }
 
     .modal-backdrop {
@@ -481,6 +461,43 @@
     .close-button:hover {
         /* Change background color when hovered */
         background-color: pink; /* Change background to pink on hover */
+    }
+
+    /* Responsive tweaks for smaller screens */
+    @media screen and (max-width: 600px) {
+        .banner {
+            flex-direction: column;
+            padding: 0.5rem 1rem;
+            height: auto;   /* Let height adjust */
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .banner-center {
+            position: relative;
+            left: 0;
+            transform: none;
+            margin: 0.5rem 0;
+        }
+
+        .banner-right {
+            justify-content: center;
+            margin: 0;
+            gap: 1rem;
+        }
+
+        .love-letter-container {
+            display: none;
+        }
+
+        .gallery {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            row-gap: 1.5rem;
+            column-gap: 0.5rem;
+        }
+
+        .photo-card {
+            margin-top: 80px;
+        }
     }
 </style>
 
