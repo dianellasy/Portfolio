@@ -1,4 +1,5 @@
 <svelte:head>   <!-- The <svelte:head> block allows insertion of elements into the document head -->
+    <title>Home - Dianella Sy's Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <!-- Meta tag to ensure proper responsive scaling on mobile devices -->
 </svelte:head>
 

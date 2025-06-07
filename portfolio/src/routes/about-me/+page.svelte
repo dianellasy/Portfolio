@@ -58,11 +58,13 @@
 
 
 <svelte:head>
+    <title>About Me - Dianella Sy's Portfolio</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
         rel="stylesheet"
     />
 </svelte:head>
+
 
 <style>
     .banner {
@@ -290,7 +292,7 @@
     }
 
     .resume-icon:hover svg path {
-        fill: #efb7ce;
+        fill: #efb7ce;  /* Icon turns pink when hovered */
     }
 
     .content {

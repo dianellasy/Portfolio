@@ -1,4 +1,3 @@
-
 <script lang="ts">
     import { text } from "@sveltejs/kit";
     import { goto } from '$app/navigation'; // Import the SvelteKit navigation function to programatically route the user
@@ -116,6 +115,7 @@
 
 
 <svelte:head>
+    <title>Projects - Dianella Sy's Portfolio</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
         rel="stylesheet"
