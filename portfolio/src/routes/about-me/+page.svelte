@@ -361,21 +361,19 @@
             text-align: center; /* Center any text inside */
         }
 
-        .top-container .left-side-image {
+        .top-container, .left-side-image {
             width: 100%;
             height: auto;   /* Maintain aspect ratio */
-            margin-right: 55px;
         }
 
         .bottom-text-underneath-picture-in-pink,
         .bottom-text-underneath-picture-in-white {
             width: 100%;
             text-align: center;
-            margin-right: 55px;
         }
 
         .social-icons {
-            margin-right: 55px;
+            align-items: center;
         }
 
         .right-column,
@@ -383,7 +381,7 @@
         .content p {
             width: 100%;
             text-align: center;
-            margin-left: 20px;
+            align-items: center;
         }
     }
 
