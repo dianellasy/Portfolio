@@ -388,9 +388,10 @@
     .technology-badges {
         /* Technology badges container */
         display: flex;  /* Use Flexbox for layout */
-        justify-content: center;    /* Center badgs horizontally */
+        justify-content: center;    /* Center badges horizontally */
         gap: 0.5rem;    /* Space between badges */
         margin-bottom: 1rem;    /* Space below the badges section */
+        flex-wrap: wrap;
     }
 
     .badge {
@@ -402,6 +403,7 @@
         padding: 0.3rem 0.6rem; /* Padding to create the rectangle shape */
         border-radius: 4px; /* Slightly rounded corners */
         font-family: 'Open Sans', sans-serif;
+        text-align: center;
     }
 
     .project-text {
