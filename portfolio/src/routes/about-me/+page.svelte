@@ -252,7 +252,7 @@
         /* Container for all social icons */
         display: inline-flex;  /* Inline flex so it does not take the full width */
         gap: 20px;  /* Space between the icons */
-        margin-top: 0.9rem;   /* Space between the text and the icons */
+        margin-top: 0.1rem;   /* Space between the text and the icons */
     }
 
     .social-icons a {
@@ -449,8 +449,7 @@
         <!-- Top container holds the image on the left and the content on the right -->
         <img class="left-side-image" src="/about-me/left-side-image.jpg" alt="Left Side" />
         <p class="bottom-text-underneath-picture-in-pink">
-            <strong>Dianella Sy<br>
-            (she/her)</strong>
+            <strong>Dianella Sy<br></strong>
         </p>
 
         <p class="bottom-text-underneath-picture-in-white">
