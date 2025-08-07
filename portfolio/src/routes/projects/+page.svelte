@@ -44,6 +44,50 @@
 
     // Project data for six cards
     const projects = [
+        { 
+            name: "MathPath AI – Cal Poly Math Placement Assistant",
+            image: "/projects/mathpath_ai.png",
+            text: `♡ Associated with Cal Poly Digital Transformation Hub; Third Place Winner, 2025 CSU AI Summer Camp
+
+♡ Streamlit-based chatbot simplifying math course placement for 5,500+ incoming Cal Poly SLO students
+
+♡ Integrated AWS Bedrock with curated knowledge base to automate answers for the top 80% of FAQs, cutting 750+ annual emails and calls to a single staff member
+
+♡ Architected secure email-based sign-in flow and session management using mock student data
+
+♡ Engineered backend integration with AWS Bedrock for LLM prompting, policy citation, and knowledge retrieval
+
+♡ Developed context-aware logic to determine course recommendations and MAPE exam eligibility
+
+♡ Designed an interactive, polished Streamlit UI with responsive layout, custom styling, and citation display
+
+♡ Enforced separation of concerns by isolating core logic (backend.py) from UI components (ui.py), enhancing collaboration and maintainability`,  
+            technologies: ["Python", "Streamlit", "Boto3", "AWS CLI v2", "AWS Bedrock", "Dotenv"],
+            icons: [
+                { type: "font", iconClass: "fab fa-github", link: "https://github.com/dianellasy/math-path-ai" },
+                { type: "font", iconClass: "fab fa-slideshare", link: "https://www.canva.com/design/DAGuxeqEl0M/GzGb4GXGAS9IBDf2XVSHuQ/view?utm_content=DAGuxeqEl0M&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5a405b90c5" },
+            ]
+        },
+
+        { 
+            name: "Research Project: Tech Stock Dynamics Analysis",
+            image: "/projects/tech_stock_dynamics_analysis.png",
+            text: `♡ Spearheaded an end-to-end ETL pipeline parsing Kaggle CSVs to extract and align daily closing prices for GOOGL and META from 2012–2022
+
+♡ Computed annual and overall spread statistics—range, mean, variance, standard deviation, interquartile range—revealing growth in the price difference from $114.73 (2012) to a $2,409 peak across the decade
+
+♡ Quantified short-run comovement via sample-size–adjusted Pearson correlation on daily returns, uncovering correlation coefficients oscillating between –0.66 and +0.97 under varying market regimes
+
+♡ Executed Engle–Granger cointegration tests by estimating OLS β, extracting residuals, and applying the ADF t-test (γ), consistently failing to reject non-stationarity at the 5% threshold—demonstrating a lack of long-run equilibrium
+
+♡ Derived actionable insights for pairs-trading and risk-parity strategies, emphasizing that despite high daily correlation, the non-stationary spread invalidates mean-reversion assumptions for these tech giants`,  
+            technologies: ["Python"],
+            icons: [
+                { type: "font", iconClass: "fab fa-github", link: "https://github.com/dianellasy/PairsTradingGoogleVsMeta" },
+                { type: "font", iconClass: "fab fa-slideshare", link: "/projects/tech_stock_dynamics_analysis.html", linkTarget: "_blank", rel: "noopener noreferrer" },
+            ]
+        },
+
         {
             name: "Country Life Cafe",
             image: "/projects/country_life_cafe.png",
@@ -81,7 +125,7 @@
             image: "/projects/acm_design_portfolio.png",
             text: `♡ Contribute to the Association for Computing Machinery CSUF’s website, the largest open-source project for the chapter club, by fixing issues listed on GitHub and creating pull requests
 
-♡ Redesign a page that showcases portfolios utilizing Figma, JSON, and Svelte`,
+♡ Redesign a page that showcases portfolios (acmcsuf.com/portfolios) and added Fall 2025 board members (acmcsuf.com/teams) utilizing Figma, JSON, and Svelte`,
             technologies: ["Figma", "JSON", "Svelte"],
             icons: [
                 { type: "font", iconClass: "fab fa-github", link: "https://github.com/EthanThatOneKid/acmcsuf.com/pull/1178" },
@@ -289,9 +333,9 @@
     .container {
         /* Container defines a grid layout for the project cards with three equal columns */
         display: grid;  /* Apply CSS Grid layout */
-        grid-template-columns: repeat(3, 1fr);  /* Create 3 columns of equal width */
+        grid-template-columns: repeat(4, 1fr);  /* Create 4 columns of equal width */
         gap: 1.5rem;    /* Set space between the grid items */
-        max-width: 1200px;  /* Maximum width of the container */
+        max-width: 1600px;  /* Maximum width of the container */
         margin: 2rem auto;  /* Center the container and add vertical spacing */
         padding: 0 1rem;    /* Horizontal padding for the container */
     }

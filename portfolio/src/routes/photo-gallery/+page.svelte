@@ -158,6 +158,15 @@
             description: 'Former Team Leads and New Team Leads for ACM CSUF Open Source Software Team',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
             rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
+        },
+
+        {
+            id: 14,  // Unique identifier for the photo
+            src: '/photo-gallery/csu_ai_summer_camp.jpg', // Source path for the image
+            date: 'August 1, 2025',   // Date to display below the image
+            description: 'CSU AI Summer Camp Awards Ceremony Where it was Announced that my Group and I Won Third Place Overall for Best Project',  // Short description of the image
+            leftSticker: '',    // Sticker that will appear on the top-left of the photo
+            rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
         }
     ];
 
