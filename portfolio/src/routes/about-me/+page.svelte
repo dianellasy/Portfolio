@@ -559,22 +559,23 @@
                 workshops. In addition to being Treasurer, in the spring semester, I attended my first hackathon, 
                 <span class="pink-word">FullyHacks 2025</span>, where I won <span class="pink-word">Best Game Project</span>.<br><br> 
 
-                This summer, I am participating in the <span class="pink-word">2025 CIC Summer Research Program</span> at CSUF. During this seven-week 
-                research experience, I am exploring <span class="pink-word">Pairs Trading</span> by engaging in structured virtual lectures, 
+                This summer, I participated in the <span class="pink-word">2025 CIC Summer Research Program</span> at CSUF. During this seven-week 
+                research experience, I explored <span class="pink-word">Pairs Trading</span> by engaging in structured virtual lectures, 
                 working on a research project, collaborating with faculty and peers, and gaining valuable experience applying computer science 
-                concepts to real-world problems. In addition, I was also <span class="pink-word">1</span> out of the <span class="pink-word">50</span>, 
+                concepts to real-world problems. In addition, I was also <span class="pink-word">1</span> out of the <span class="pink-word">100</span>, 
                 from an applicant pool of nearly <span class="pink-word">900</span>, selected to attend the <span class="pink-word">CSU AI Summer Camp 2025</span>
-                at Cal Poly San Luis Obispo, sponsored by <span class="pink-word">Amazon Web Services (AWS)</span>. I will be working with a team to solve pressing 
-                challenges and opportunities in the CSU system, applying AI technologies through hands-on workshops and mentored projects, and pitching my team’s 
-                ideas and prototypes to my peers and mentors in a 5-day <span class="pink-word">applied AI hackathon</span>.<br><br>
+                at Cal Poly San Luis Obispo, sponsored by <span class="pink-word">Amazon Web Services (AWS)</span>. I worked with a team of 5 to solve pressing 
+                challenges and opportunities in the CSU system, applied AI technologies through hands-on workshops and mentored projects, and pitched my team’s 
+                ideas and prototypes to my peers and mentors in a 5-day <span class="pink-word">applied AI hackathon</span>. At the end of the camp, my team and I were 
+                awarded as the <span class="pink-word">third place</span> winner for our project MathPath AI - Cal Poly Math Placement Assistant.<br><br>
 
-                For the upcoming year as a third-year student, I will be a <span class="pink-word">Computer Science Supplemental Instruction Leader</span>, where I 
-                facilitate two group sessions weekly where students meet to improve their understanding of the course materials in a computer science class. I will
-                also be the <span class="pink-word">Webmaster</span> and <span class="pink-word">Open Source Co-Team Lead</span> for the CSUF chapter club, 
-                <span class="pink-word">Association for Computing Machinery</span>. As Webmaster, I will maintain the Association for Computing Machinery CSUF’s website, 
-                <span class="pink-word">acmcsuf.com</span>, the largest open-source project for the chapter club, and update it with new information. I will also guide 
+                As a third-year student, I am a <span class="pink-word">Computer Science Supplemental Instruction Leader</span>, where I 
+                facilitate two group sessions weekly where students meet to improve their understanding of the course materials in a computer science class. I am
+                also the <span class="pink-word">Webmaster</span> and <span class="pink-word">Open Source Co-Team Lead</span> for the CSUF chapter club, 
+                <span class="pink-word">Association for Computing Machinery</span>. As Webmaster, I maintain the Association for Computing Machinery CSUF’s website, 
+                <span class="pink-word">acmcsuf.com</span>, the largest open-source project for the chapter club, and update it with new information. I also guide 
                 students with issues listed on <span class="pink-word">GitHub</span> and mentor how to solve the issue, providing hands-on experience in contributing to 
-                open-source projects. As Open Source Co-Team Lead, I will present and organize weekly technical workshops for students, such as instructing them to make a 
+                open-source projects. As Open Source Co-Team Lead, I present and organize weekly technical workshops for students, such as instructing them to make a 
                 first contribution to the acmcsufoss organization, hands-on coding, and real-world open source projects.<br><br>
 
                 After I graduate, I plan to pursue a <span class="pink-word">master's degree</span> and a <span class="pink-word">PhD</span> while working as a software engineer. 
