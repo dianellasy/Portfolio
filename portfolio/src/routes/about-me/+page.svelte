@@ -21,7 +21,7 @@
     const messages = [
         "Thank you for visiting my portfolio! ❤️, Dianella Sy",
         `Two of my favorite songs are "You Oughta Know" by Alanis Morisette and "Sweet Talkin' Woman" by ELO 🎸🎤🎶`,
-        "My favorite hobbies include watching true crime shows, walking and riding my road bike on a trail, and spending time with my family and friends 📺🚵🏻‍♀️🫂"
+        "My favorite hobbies include roller-skating, watching true crime shows, walking and riding my road bike on a trail, and spending time with my family and friends 🛼📺🚵🏻‍♀️🫂"
     ];
 
     let tooltip_text = messages[0]; // Initialize the tooltip content with the first message
@@ -453,7 +453,7 @@
         </p>
 
         <p class="bottom-text-underneath-picture-in-white">
-            Aspiring Software Developer
+            Aspiring Software Engineer
         </p>
 
         <div class="social-icons">
@@ -566,16 +566,16 @@
                 from an applicant pool of nearly <span class="pink-word">900</span>, selected to attend the <span class="pink-word">CSU AI Summer Camp 2025</span>
                 at Cal Poly San Luis Obispo, sponsored by <span class="pink-word">Amazon Web Services (AWS)</span>. I worked with a team of 5 to solve pressing 
                 challenges and opportunities in the CSU system, applied AI technologies through hands-on workshops and mentored projects, and pitched my team’s 
-                ideas and prototypes to my peers and mentors in a 5-day <span class="pink-word">applied AI hackathon</span>. At the end of the camp, my team and I were 
-                awarded as the <span class="pink-word">third place</span> winner for our project MathPath AI - Cal Poly Math Placement Assistant.<br><br>
+                ideas and prototypes to my peers and mentors in a 2-day <span class="pink-word">applied AI hackathon</span>. At the end of the camp, my team and I were 
+                awarded as the <span class="pink-word">third-place</span> winners for our project, MathPath AI - Cal Poly Math Placement Assistant.<br><br>
 
                 As a third-year student, I am a <span class="pink-word">Computer Science Supplemental Instruction Leader</span>, where I 
-                facilitate two group sessions weekly where students meet to improve their understanding of the course materials in a computer science class. I am
-                also the <span class="pink-word">Webmaster</span> and <span class="pink-word">Open Source Co-Team Lead</span> for the CSUF chapter club, 
+                facilitate two group sessions weekly where students meet to improve their understanding of the course materials in the class, Computer Organization and Assembly Language. I am
+                also the <span class="pink-word">Webmaster</span> and <span class="pink-word">Open Source Team Lead</span> for the CSUF chapter club, 
                 <span class="pink-word">Association for Computing Machinery</span>. As Webmaster, I maintain the Association for Computing Machinery CSUF’s website, 
                 <span class="pink-word">acmcsuf.com</span>, the largest open-source project for the chapter club, and update it with new information. I also guide 
                 students with issues listed on <span class="pink-word">GitHub</span> and mentor how to solve the issue, providing hands-on experience in contributing to 
-                open-source projects. As Open Source Co-Team Lead, I present and organize weekly technical workshops for students, such as instructing them to make a 
+                open-source projects. As Open Source Team Lead, I present and organize weekly technical workshops for students, such as instructing them to make a 
                 first contribution to the acmcsufoss organization, hands-on coding, and real-world open source projects.<br><br>
 
                 After I graduate, I plan to pursue a <span class="pink-word">master's degree</span> and a <span class="pink-word">PhD</span> while working as a software engineer. 

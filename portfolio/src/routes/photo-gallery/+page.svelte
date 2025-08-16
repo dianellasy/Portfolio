@@ -167,6 +167,15 @@
             description: 'CSU AI Summer Camp Awards Ceremony Where it was Announced that my Group and I Won Third Place Overall for Best Project',  // Short description of the image
             leftSticker: '',    // Sticker that will appear on the top-left of the photo
             rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
+        },
+
+        {
+            id: 15,  // Unique identifier for the photo
+            src: '/photo-gallery/summer_symposium.jpg', // Source path for the image
+            date: 'August 7, 2025',   // Date to display below the image
+            description: 'Presented Summer Research Project on Tech Stock Dynamics Analysis (Google & Meta, 2012–2022) @ CSUF Summer Symposium',  // Short description of the image
+            leftSticker: '',    // Sticker that will appear on the top-left of the photo
+            rightSticker: ''    // Sticker that will appear on the bottom-right of the photo
         }
     ];
 

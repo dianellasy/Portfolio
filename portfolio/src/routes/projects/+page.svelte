@@ -47,22 +47,12 @@
         { 
             name: "MathPath AI – Cal Poly Math Placement Assistant",
             image: "/projects/mathpath_ai.png",
-            text: `♡ Associated with Cal Poly Digital Transformation Hub; Third Place Winner, 2025 CSU AI Summer Camp
+            text: `♡ Developed a Streamlit-based chatbot integrated with AWS Bedrock and a curated knowledge base to automate answers to 80% of math placement questions for 5,500+ incoming Cal Poly SLO students, reducing 750+ annual emails and calls, and winning Third Place at the 2025 CSU AI Summer Camp Hackathon
 
-♡ Streamlit-based chatbot simplifying math course placement for 5,500+ incoming Cal Poly SLO students
+♡ Architected secure email-based sign-in and session management using mock student data, built context-aware logic for course recommendations and MAPE exam eligibility, and enforced separation of concerns to streamline collaboration and maintainability
 
-♡ Integrated AWS Bedrock with curated knowledge base to automate answers for the top 80% of FAQs, cutting 750+ annual emails and calls to a single staff member
-
-♡ Architected secure email-based sign-in flow and session management using mock student data
-
-♡ Engineered backend integration with AWS Bedrock for LLM prompting, policy citation, and knowledge retrieval
-
-♡ Developed context-aware logic to determine course recommendations and MAPE exam eligibility
-
-♡ Designed an interactive, polished Streamlit UI with responsive layout, custom styling, and citation display
-
-♡ Enforced separation of concerns by isolating core logic (backend.py) from UI components (ui.py), enhancing collaboration and maintainability`,  
-            technologies: ["Python", "Streamlit", "Boto3", "AWS CLI v2", "AWS Bedrock", "Dotenv"],
+♡ Designed a polished, responsible Streamlit UI with custom styling and citation display, leveraging Python, Boto3, AWS CLI v2, AWS Bedrock, and Dotenv`,
+            technologies: ["Python", "Streamlit", "Boto3", "AWS CLI v2", "AWS Bedrock", "Dotenv", "Two-Day Hackathon", "Third-Place Winner", "100 Participants"],
             icons: [
                 { type: "font", iconClass: "fab fa-github", link: "https://github.com/dianellasy/math-path-ai" },
                 { type: "font", iconClass: "fab fa-slideshare", link: "https://www.canva.com/design/DAGuxeqEl0M/GzGb4GXGAS9IBDf2XVSHuQ/view?utm_content=DAGuxeqEl0M&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5a405b90c5" },
@@ -70,17 +60,13 @@
         },
 
         { 
-            name: "Research Project: Tech Stock Dynamics Analysis",
+            name: "Tech Stock Dynamics Analysis (Google & Meta, 2012–2022) – Research Project",
             image: "/projects/tech_stock_dynamics_analysis.png",
-            text: `♡ Spearheaded an end-to-end ETL pipeline parsing Kaggle CSVs to extract and align daily closing prices for GOOGL and META from 2012–2022
+            text: `♡ Engineered a Python pipeline to ingest and clean ~5,040 daily closing prices for Google (GOOGL) and Meta (META) from 2012–2022–interpolating 100% of missing values and slashing manual preprocessing time by 75%
 
-♡ Computed annual and overall spread statistics—range, mean, variance, standard deviation, interquartile range—revealing growth in the price difference from $114.73 (2012) to a $2,409 peak across the decade
+♡ Applied rolling Pearson correlation alongside Engle-Granger cointegration tests and computed spread statistics to reveal strong short-term co-movement without a long-run equilibrium
 
-♡ Quantified short-run comovement via sample-size–adjusted Pearson correlation on daily returns, uncovering correlation coefficients oscillating between –0.66 and +0.97 under varying market regimes
-
-♡ Executed Engle–Granger cointegration tests by estimating OLS β, extracting residuals, and applying the ADF t-test (γ), consistently failing to reject non-stationarity at the 5% threshold—demonstrating a lack of long-run equilibrium
-
-♡ Derived actionable insights for pairs-trading and risk-parity strategies, emphasizing that despite high daily correlation, the non-stationary spread invalidates mean-reversion assumptions for these tech giants`,  
+♡ Demonstrated that high correlation does not equate to cointegration–invalidating mean-reversion signals for pairs trading–and delivered risk-aware strategy guidance, noting limitations`,  
             technologies: ["Python"],
             icons: [
                 { type: "font", iconClass: "fab fa-github", link: "https://github.com/dianellasy/PairsTradingGoogleVsMeta" },
@@ -107,7 +93,7 @@
         {
             name: "Out of this World Cafe",
             image: "/projects/out_of_this_world_cafe.png",
-            text: `♡ Developed during the 24-hour hackathon, FullyHacks 2025, with 250+ participants, and won Best Game Project 
+            text: `♡ Crafted an award-winning game in 24 hours at the hackathon, FullyHacks 2025, with 250+ participants, winning Best Game Project 
             
 ♡ Implemented a restaurant tycoon video game utilizing C# and Unity, where a group of animals have been stranded in space for a period of time
 
@@ -125,11 +111,10 @@
             image: "/projects/acm_design_portfolio.png",
             text: `♡ Contribute to the Association for Computing Machinery CSUF’s website, the largest open-source project for the chapter club, by fixing issues listed on GitHub and creating pull requests
 
-♡ Redesign a page that showcases portfolios (acmcsuf.com/portfolios) and added Fall 2025 board members (acmcsuf.com/teams) utilizing Figma, JSON, and Svelte`,
-            technologies: ["Figma", "JSON", "Svelte"],
+♡ Redesign a page that showcases <a href="https://acmcsuf.com/portfolios" target="_blank" rel="noopener noreferrer">portfolios</a> and added <a href="https://acmcsuf.com/teams" target="_blank" rel="noopener noreferrer">Fall 2025 board members</a> utilizing Figma, JSON, and SvelteKit`,
+            technologies: ["Figma", "JSON", "SvelteKit"],
             icons: [
-                { type: "font", iconClass: "fab fa-github", link: "https://github.com/EthanThatOneKid/acmcsuf.com/pull/1178" },
-                { type: "font", iconClass: "fas fa-globe", link: "https://acmcsuf.com/portfolios" }
+                { type: "font", iconClass: "fab fa-github", link: "https://github.com/EthanThatOneKid/acmcsuf.com" }
             ]
         },
 
@@ -461,6 +446,20 @@
         font-family: 'Open Sans', sans-serif;
     }
 
+    .project-text a {
+        color: #66ccff; /* Light blue */
+        text-decoration: underline;
+        transition: color 0.2s;
+    }
+    
+    .project-text a:visited {
+        color: #66ccff; 
+    }
+
+    .project-text a:hover {
+        color: #ffb347; /* Gold on hover for contrast */
+    }
+
     .project-icons {
         /* Container styling for the project icons */
         display: flex;  /* Use Flexbox for layout of icons */
@@ -602,7 +601,7 @@
                 </div>
             {/if}
 
-            <div class="project-text">{project.text}</div>  <!-- Display the project text with multi-line support -->
+            <div class="project-text">{@html project.text}</div>  <!-- Display the project text as HTML -->
 
             {#if project.icons && project.icons.length} <!-- Conditionally render project icons if they exist and have items -->
                 <div class="project-icons">
