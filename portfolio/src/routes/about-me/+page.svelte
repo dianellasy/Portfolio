@@ -537,7 +537,7 @@
         <div class="content">
             <h1>Hello World!</h1>
             <p>
-                My name is <span class="pink-word">Dianella Sy</span>, and I am a third-year
+                My name is <span class="pink-word">Dianella Sy</span>, and I am a fourth-year
                 undergraduate student majoring in <span class="pink-word">Computer Science </span>
                 at <span class="pink-word">California State University, Fullerton (CSUF)</span>.<br><br>
 
@@ -559,7 +559,7 @@
                 workshops. In addition to being Treasurer, in the spring semester, I attended my first hackathon, 
                 <span class="pink-word">FullyHacks 2025</span>, where I won <span class="pink-word">Best Game Project</span>.<br><br> 
 
-                This summer, I participated in the <span class="pink-word">2025 CIC Summer Research Program</span> at CSUF. During this seven-week 
+                In the summer of 2025, I participated in the <span class="pink-word">2025 CIC Summer Research Program</span> at CSUF. During this seven-week 
                 research experience, I explored <span class="pink-word">Pairs Trading</span> by engaging in structured virtual lectures, 
                 working on a research project, collaborating with faculty and peers, and gaining valuable experience applying computer science 
                 concepts to real-world problems. In addition, I was also <span class="pink-word">1</span> out of the <span class="pink-word">100</span>, 
@@ -569,14 +569,20 @@
                 ideas and prototypes to my peers and mentors in a 2-day <span class="pink-word">applied AI hackathon</span>. At the end of the camp, my team and I were 
                 awarded as the <span class="pink-word">third-place</span> winners for our project, MathPath AI - Cal Poly Math Placement Assistant.<br><br>
 
-                As a third-year student, I am a <span class="pink-word">Computer Science Supplemental Instruction Leader</span>, where I 
-                facilitate two group sessions weekly where students meet to improve their understanding of the course materials in the class, Computer Organization and Assembly Language. I am
-                also the <span class="pink-word">Webmaster</span> and <span class="pink-word">Open Source Team Lead</span> for the CSUF chapter club, 
-                <span class="pink-word">Association for Computing Machinery</span>. As Webmaster, I maintain the Association for Computing Machinery CSUF’s website, 
-                <span class="pink-word">acmcsuf.com</span>, the largest open-source project for the chapter club, and update it with new information. I also guide 
-                students with issues listed on <span class="pink-word">GitHub</span> and mentor how to solve the issue, providing hands-on experience in contributing to 
-                open-source projects. As Open Source Team Lead, I present and organize weekly technical workshops for students, such as instructing them to make a 
+                During my third year at CSUF, I was a <span class="pink-word">Computer Science Supplemental Instruction Leader</span>, where I 
+                facilitated two group sessions weekly where students met to improve their understanding of the course materials in the class, Computer Organization and Assembly Language. 
+                I was honored to receive the <span class="pink-word">Outstanding Supplemental Instruction Leader Award</span> for Fall 2025 in my <span class="pink-word">first semester</span>
+                as a SI Leader. I was also the <span class="pink-word">Webmaster</span> and <span class="pink-word">Open Source Team Lead</span> for the CSUF chapter club, 
+                <span class="pink-word">Association for Computing Machinery</span>. As Webmaster, I maintained the Association for Computing Machinery CSUF’s website, 
+                <span class="pink-word">acmcsuf.com</span>, the largest open-source project for the chapter club, and updated it with new information. I also guided 
+                students with issues listed on <span class="pink-word">GitHub</span> and mentored them in solving the issue, providing hands-on experience in contributing to 
+                open-source projects. As Open Source Team Lead, I presented and organized weekly technical workshops for students, such as instructing them to make a 
                 first contribution to the acmcsufoss organization, hands-on coding, and real-world open source projects.<br><br>
+
+                As a fourth-year student at CSUF, I serve as <span class="pink-word">ACM CSUF President</span> where I oversee the <span class="pink-word">largest ECS student organization</span>
+                with a multi-team officer board and a community of <span class="pink-word">2,000+ members</span>. I direct club operations by coordinating <span class="pink-word">50+ events</span> 
+                focused on technical development, networking, and hands-on learning opportunities for computer science students. I am also the <span class="pink-word">Computer Science Senior Supplemental Instruction Leader</span>
+                where I mentor SI leaders by guiding a team of computer science SI leaders through weekly check-ins, collaborative planning, and ongoing support.<br><br>
 
                 After I graduate, I plan to pursue a <span class="pink-word">master's degree</span> and a <span class="pink-word">PhD</span> while working as a software engineer. 
                 I am excited and looking forward to working in the same field as my dad, applying all of the topics I learned in fifth grade through Code.org, AP Computer Science Principles, 
