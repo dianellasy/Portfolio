@@ -453,7 +453,7 @@
         </p>
 
         <p class="bottom-text-underneath-picture-in-white">
-            Aspiring Software Engineer
+            Aspiring Software Developer
         </p>
 
         <div class="social-icons">

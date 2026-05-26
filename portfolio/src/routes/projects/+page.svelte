@@ -42,8 +42,60 @@
         }
     }
 
-    // Project data for six cards
+    // Project data for cards
     const projects = [
+        { 
+            name: "Financella - Personal Finance Tracker",
+            image: "/projects/financella.png",
+            text: `♡ Built full‑stack features including user authentication, JWT‑protected routes, and secure password hashing with bcrypt
+
+♡ Developed transaction management allowing users to add, view, filter, sort, and delete expenses
+
+♡ Implemented a calendar view that highlights transaction days and displays daily spending details
+
+♡ Designed a responsive UI using vanilla JavaScript, HTML, and CSS for both list and calendar views
+
+♡ Integrated MongoDB Atlas for secure cloud‑based data storage`,
+            technologies: ["CSS", "Express.js", "HTML", "JavaScript", "JSON Web Token (JWT)", "MongoDB", "Node.js"],
+            icons: [
+                { type: "font", iconClass: "fab fa-github", link: "https://github.com/dianellasy/Financella" }
+            ]
+        },
+
+        { 
+            name: "Fitness Log",
+            text: `♡ Developed a backend API using Java 21 and Spring Boot to support user authentication and full workout CRUD operations
+
+♡ Implemented secure authentication with user registration, login, and JWT‑protected routes
+
+♡ Built REST endpoints for creating, viewing, updating, and deleting workouts, including ID‑based retrieval
+
+♡ Containerized the application with Docker and Docker Compose for easy deployment and local development
+
+♡ Integrated MongoDB for persistent storage of user accounts and workout data
+
+♡ Created a demo workflow showcasing app setup, authentication, and workout management features`,
+            technologies: ["Docker", "Java", "JWT Authentication", "MongoDB", "REST APIs", "Spring Boot"],
+            icons: [
+                { type: "font", iconClass: "fab fa-github", link: "https://github.com/AzureWings123/CPSC449-FinalProject" },
+                { type: "font", iconClass: "fab fa-youtube", link: "https://youtu.be/iKe2lO-axWc?si=gXXXtiwD_fILDlOI" }
+            ]
+        },
+
+        { 
+            name: "Elephant Hunt",
+            image: "/projects/elephant-hunt.png",
+            text: `♡ Built a full‑stack scavenger hunt platform using Python, Streamlit, Supabase, and xAI Grok, delivering LLM‑generated riddles, secure QR‑based progression, and a real‑time leaderboard
+
+♡ Engineered server‑validated QR scanning with deep‑linked codes (team slug, station ID, scan flag) and a Supabase schema for teams, stations, paths, scoring events, and winner tracking
+
+♡ Developed a polished Streamlit UI with a Guardian chatbot interface and automated QR pack generation (QRCode + Pillow) for scalable multi‑team deployment`,
+            technologies: ["Python", "Streamlit", "Supabase", "xAI Grok"],
+            icons: [
+                { type: "font", iconClass: "fab fa-github", link: "https://github.com/bebopkenny/Elephant-Hunt" }
+            ]
+        },
+
         { 
             name: "MathPath AI – Cal Poly Math Placement Assistant",
             image: "/projects/mathpath_ai.png",
@@ -93,11 +145,11 @@
         {
             name: "Out of this World Cafe",
             image: "/projects/out_of_this_world_cafe.png",
-            text: `♡ Crafted an award-winning game in 24 hours at the hackathon, FullyHacks 2025, with 250+ participants, winning Best Game Project 
-            
-♡ Implemented a restaurant tycoon video game utilizing C# and Unity, where a group of animals have been stranded in space for a period of time
+            text: `♡ Co-developed an award-winning game as part of a three-person team in 24 hours at the hackathon, FullyHacks 2025, with 250+ participants, winning Best Game Project 
 
-♡ Served the animals ice cream, and if they are satisfied, they will go home with the cafe owner back to Earth`,
+♡ Implemented a restaurant tycoon video game utilizing C# and Unity, where animals stranded in space visit a cafe
+
+♡ Designed core gameplay mechanics: serving ice cream to satisfy customers and send them home with the cafe owner back to Earth`,
             technologies: ["C#", "Unity", "24-Hour Hackathon", "Best Game Project", "250+ Participants"],
             icons: [
                 { type: "font", iconClass: "fab fa-github", link: "https://github.com/emilyytsai/OutOfThisWorldCafe" },
@@ -109,9 +161,11 @@
         {
             name: "Association for Computing Machinery CSUF Website (acmcsuf.com)",
             image: "/projects/acm_design_portfolio.png",
-            text: `♡ Contribute to the Association for Computing Machinery CSUF’s website, the largest open-source project for the chapter club, by fixing issues listed on GitHub and creating pull requests
+            text: `♡ Contributed to ACM CSUF’s open‑source website — the chapter’s largest project — by fixing GitHub issues and submitting production‑ready pull requests
 
-♡ Redesign a page that showcases <a href="https://acmcsuf.com/portfolios" target="_blank" rel="noopener noreferrer">portfolios</a> and added <a href="https://acmcsuf.com/teams" target="_blank" rel="noopener noreferrer">Fall 2025 board members</a> utilizing Figma, JSON, and SvelteKit`,
+♡ Redesigned the portfolio showcase page using Figma, JSON, and SvelteKit, improving usability and visual consistency
+
+♡ Collaborated with developers to maintain and enhance features across the site, following open‑source workflows and code review practices`,
             technologies: ["Figma", "JSON", "SvelteKit"],
             icons: [
                 { type: "font", iconClass: "fab fa-github", link: "https://github.com/EthanThatOneKid/acmcsuf.com" }
